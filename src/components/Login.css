@@ -1,0 +1,18 @@
+.loginInput-main {
+    align-items: center; 
+    border: 5px solid red;
+    display: flex;
+    flex-direction: column;
+    height: 640px;
+    justify-content: center;
+    width: 320px;
+}
+ 
+.login-input-conteudo {
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 118px;
+    width: 180px;
+} 
