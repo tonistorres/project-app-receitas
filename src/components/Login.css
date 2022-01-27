@@ -1,5 +1,6 @@
 .loginInput-main {
     align-items: center; 
+    background-image: url("fundoApp01.jpg");
     border: 5px solid red;
     display: flex;
     flex-direction: column;
@@ -9,10 +10,11 @@
 }
  
 .login-input-conteudo {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    height: 118px;
-    width: 180px;
+    height: 108px;
+    margin-bottom: 5px;
+    width: 220px;
 } 
