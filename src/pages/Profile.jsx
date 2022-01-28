@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Header from '../components/Header';
 
 export default function Profile() {
   const [email, setEmail] = useState('');
@@ -19,6 +20,7 @@ export default function Profile() {
 
   return (
     <div>
+      <Header />
       <p data-testid="profile-email">{email}</p>
       <button
         type="button"
