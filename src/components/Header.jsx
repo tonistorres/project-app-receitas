@@ -27,16 +27,20 @@ export default function Header() {
     setRedirect(false);
     switch (pathname) {
     case '/foods':
-      if (searchByFilter.length === 1) {
+      if (searchByFilter !== null && searchByFilter.length === 1) {
         history.push(`/foods/${searchByFilter[0].idMeal}`);
       }
       break;
-    default:
-      if (searchByFilter.length === 1) {
+    case '/drinks':
+      if (searchByFilter !== null && searchByFilter.length === 1) {
         history.push(`/drinks/${searchByFilter[0].idDrink}`);
       }
+      break;
+    default:
+      return null;
     }
   };
+
   /* eslint-disable */
   useEffect(() => {
     if (redirect) {
@@ -44,6 +48,7 @@ export default function Header() {
     }
   }, [searchByFilter]);
   /* eslint-enable */
+
   const searchIngredient = async () => {
     const answer = await ingredientsSearch(search, pathname);
     setSearchByFilter(answer);
@@ -55,6 +60,7 @@ export default function Header() {
   const letterhName = async () => {
     const answer = await letterSearch(search, pathname);
     setSearchByFilter(answer);
+    console.log(pathname);
   };
 
   function submitRequest() {
