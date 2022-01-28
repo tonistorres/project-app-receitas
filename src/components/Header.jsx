@@ -31,10 +31,13 @@ export default function Header() {
         history.push(`/foods/${searchByFilter[0].idMeal}`);
       }
       break;
-    default:
+    case '/drinks':
       if (searchByFilter !== null && searchByFilter.length === 1) {
         history.push(`/drinks/${searchByFilter[0].idDrink}`);
       }
+      break;
+    default:
+      return null;
     }
   };
 
@@ -57,6 +60,7 @@ export default function Header() {
   const letterhName = async () => {
     const answer = await letterSearch(search, pathname);
     setSearchByFilter(answer);
+    console.log(pathname);
   };
 
   function submitRequest() {
