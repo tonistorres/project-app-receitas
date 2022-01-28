@@ -24,3 +24,42 @@ export function filterMeals(queue) {
     .then((r) => r.json())
     .then((data) => data.meals);
 }
+
+export function ingredientsSearch(queue, pathname) {
+  if (pathname === '/foods') {
+    const result = fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${queue}`)
+      .then((r) => r.json())
+      .then((data) => data.meals);
+    return result;
+  }
+  const result = fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.drinks);
+  return result;
+}
+
+export function nameSearch(queue, pathname) {
+  if (pathname === '/foods') {
+    const result = fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${queue}`)
+      .then((r) => r.json())
+      .then((data) => data.meals);
+    return result;
+  }
+  const result = fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.drinks);
+  return result;
+}
+
+export function letterSearch(queue, pathname) {
+  if (pathname === '/foods') {
+    const result = fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${queue}`)
+      .then((r) => r.json())
+      .then((data) => data.meals);
+    return result;
+  }
+  const result = fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.drinks);
+  return result;
+}

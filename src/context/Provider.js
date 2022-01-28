@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { getDrinksCategory, getMealsCategory } from '../services/fetch';
 import context from './context';
-import { getMealsCategory, getDrinksCategory } from '../services/fetch';
 
 export default function Provider({ children }) {
   const [foodCategory, setFoodCategory] = useState([]);
   const [drinkCategory, setDrinkCategory] = useState([]);
+  const [searchByFilter, setSearchByFilter] = useState([]);
 
   async function setCategories() {
     const drinks = await getDrinksCategory();
@@ -21,6 +22,9 @@ export default function Provider({ children }) {
   const value = {
     foodCategory,
     drinkCategory,
+    searchByFilter,
+    setSearchByFilter,
+
   };
 
   return (
