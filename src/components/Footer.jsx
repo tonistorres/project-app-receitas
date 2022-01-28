@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import drinkIcon from '../images/drinkIcon.svg';
 import exploreIcon from '../images/exploreIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
@@ -6,17 +7,14 @@ import mealIcon from '../images/mealIcon.svg';
 export default function Footer() {
   return (
     <div data-testid="footer">
-      <button data-testid="drinks-bottom-btn" type="button">
+      <Link to="/drinks" data-testid="drinks-bottom-btn">
         <img src={ drinkIcon } alt="explore btn" />
-        Drinks
-      </button>
-      <button data-testid="explore-bottom-btn" type="button">
+      </Link>
+      <Link to="/explore" data-testid="explore-bottom-btn">
         <img src={ exploreIcon } alt="explore btn" />
-        Explore
-      </button>
-      <button data-testid="food-bottom-btn" type="button">
+      </Link>
+      <Link to="/foods" data-testid="food-bottom-btn">
         <img src={ mealIcon } alt="explore btn" />
-        Food
-      </button>
+      </Link>
     </div>);
 }

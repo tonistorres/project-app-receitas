@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import DrinkCard from '../components/DrinkCard';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import context from '../context/context';
 
@@ -16,6 +17,7 @@ export default function Drinks() {
             index={ index }
             drink={ drink }
           />)) : global.alert(alerta)}
+      <Footer />
     </div>
   );
 }

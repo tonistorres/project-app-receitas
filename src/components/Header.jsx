@@ -42,10 +42,10 @@ export default function Header() {
   useEffect(() => {
     if (redirect) {
       verifyPushHistory();
-
     }
   }, [searchByFilter]);
   /* eslint-enable */
+
   const searchIngredient = async () => {
     const answer = await ingredientsSearch(search, pathname);
     setSearchByFilter(answer);
