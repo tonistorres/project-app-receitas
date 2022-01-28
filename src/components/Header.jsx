@@ -27,20 +27,22 @@ export default function Header() {
     setRedirect(false);
     switch (pathname) {
     case '/foods':
-      if (searchByFilter.length === 1) {
+      if (searchByFilter !== null && searchByFilter.length === 1) {
         history.push(`/foods/${searchByFilter[0].idMeal}`);
       }
       break;
     default:
-      if (searchByFilter.length === 1) {
+      if (searchByFilter !== null && searchByFilter.length === 1) {
         history.push(`/drinks/${searchByFilter[0].idDrink}`);
       }
     }
   };
+
   /* eslint-disable */
   useEffect(() => {
     if (redirect) {
       verifyPushHistory();
+
     }
   }, [searchByFilter]);
   /* eslint-enable */

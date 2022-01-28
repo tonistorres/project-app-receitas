@@ -5,11 +5,17 @@ import context from '../context/context';
 
 export default function Foods() {
   const { searchByFilter } = useContext(context);
+  const alerta = 'Sorry, we haven\'t found any recipes for these filters.';
   return (
     <div>
       <Header />
-      {searchByFilter.length > 1 && searchByFilter
-        .map((food, index) => <FoodCard key={ index } index={ index } food={ food } />)}
+      {searchByFilter !== null ? searchByFilter
+        .map((food, index) => (
+          <FoodCard
+            key={ index }
+            index={ index }
+            food={ food }
+          />)) : global.alert(alerta)}
     </div>
   );
 }
