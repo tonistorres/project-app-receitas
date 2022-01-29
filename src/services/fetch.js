@@ -63,3 +63,29 @@ export function letterSearch(queue, pathname) {
     .then((data) => data.drinks);
   return result;
 }
+
+export function searchByCategory(queue, pathname) {
+  if (pathname === '/foods') {
+    const result = fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${queue}`)
+      .then((r) => r.json())
+      .then((data) => data.meals);
+    return result;
+  }
+  const result = fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.drinks);
+  return result;
+}
+
+export function searchFoodById(queue) {
+  const result = fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.meals);
+  return result;
+}
+export function searchDrinkById(queue) {
+  const result = fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${queue}`)
+    .then((r) => r.json())
+    .then((data) => data.drinks);
+  return result;
+}

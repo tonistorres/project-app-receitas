@@ -1,9 +1,15 @@
 import React from 'react';
-import Header from './Header';
+import { Link } from 'react-router-dom';
+import profileIcon from '../images/profileIcon.svg';
+import Footer from './Footer';
 
 export default function ExploreDrink() {
   return (
     <div>
-      <Header />
+      <h1 data-testid="page-title">Explore Drinks</h1>
+      <Link to="/profile">
+        <img src={ profileIcon } data-testid="profile-top-btn" alt="profile Icon" />
+      </Link>
+      <Footer />
     </div>);
 }
