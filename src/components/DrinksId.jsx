@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { searchDrinkById } from '../services/fetch';
 import CarrouselDrinks from './CarrouselDrinks';
+import FavoriteBtn from './FavoriteBtn';
+import ShareBtn from './ShareBtn';
 
 export default function DrinksId() {
   // pegar params da url https://backefront.com.br/como-usar-useparams-react/
   const { id } = useParams();
+  const history = useHistory();
   const [drinkInProgress, setDrinkInProgress] = useState([]);
+  const [done, setDone] = useState(false);
+  const [init, setInit] = useState(false);
   const [inProgress, setInprogress] = useState({
     ingredients: [],
     measures: [],
@@ -49,9 +55,30 @@ export default function DrinksId() {
     setInprogress(answer);
   };
 
+  const verifyDoneRecipe = () => {
+    const doneRec = JSON.parse(localStorage.getItem('doneRecipes'));
+    const findItem = doneRec && doneRec.find((i) => i.id === id);
+    if (findItem) {
+      setDone(true);
+    } else {
+      setDone(false);
+    }
+  };
+  const verifyInit = () => {
+    const getInit = JSON.parse(localStorage.getItem('inProgressRecipes'));
+    const findInitItem = getInit && Object.keys(getInit.cocktails).find((i) => i === id);
+    if (findInitItem) {
+      setInit(true);
+    } else {
+      setInit(false);
+    }
+  };
+
 /* eslint-disable */
   useEffect(() => {
     requestDrinks();
+    verifyDoneRecipe();
+    verifyInit();
   }, []);
   /* eslint-enable */
 
@@ -62,22 +89,29 @@ export default function DrinksId() {
         <div key={ index }>
           <img src={ i.strDrinkThumb } alt={ i.strDrink } data-testid="recipe-photo" />
           <h1 data-testid="recipe-title">{i.strDrink}</h1>
-          <p data-testid="recipe-category">{i.strCategory}</p>
-          <button data-testid="share-btn" type="button">Share</button>
-          <button data-testid="favorite-btn" type="button">Favoritar</button>
+          <p data-testid="recipe-category">{i.strAlcoholic}</p>
+          <ShareBtn />
+          <FavoriteBtn item={ i } local="drinks" />
           {inProgress.ingredients
             .map((item, ind) => (
               <p
                 key={ ind }
                 data-testid={ `${ind}-ingredient-name-and-measure` }
               >
-                {`${inProgress.measures[index]} - ${item}`}
+                {`${inProgress.measures[ind]} - ${item}`}
               </p>))}
           <p data-testid="instructions">{i.strInstructions}</p>
           {i.strVideo && (
             <embed data-testid="video" src={ convertUrl(i.strVideo) } type="video" />)}
           <CarrouselDrinks />
-          <button data-testid="start-recipe-btn" type="button">start</button>
+          {!done && (
+            <button
+              data-testid="start-recipe-btn"
+              type="button"
+              onClick={ () => history.push(`/drinks/${id}/in-progress`) }
+            >
+              {!init ? 'Start Recipe' : 'Continue Recipe' }
+            </button>)}
         </div>
       ))}
     </div>);

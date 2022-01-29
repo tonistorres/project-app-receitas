@@ -7,8 +7,8 @@ export default function FoodCard({ index, food }) {
   const NO_MAGIC_NUMBER = 12;
   if (index >= NO_MAGIC_NUMBER) return null;
   return (
-    <Link to={ `/foods/${idMeal}` }>
-      <p data-testid={ `${index}-recipe-card` }>{index}</p>
+    <Link to={ `/foods/${idMeal}` } data-testid={ `${index}-recipe-card` }>
+      <p>{index}</p>
       <img src={ strMealThumb } data-testid={ `${index}-card-img` } alt={ strMeal } />
       <p data-testid={ `${index}-card-name` }>{strMeal}</p>
     </Link>);

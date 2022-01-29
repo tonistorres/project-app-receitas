@@ -15,7 +15,7 @@ export default function Foods() {
   const history = useHistory();
   const { location: { pathname } } = history;
   const fetchRecipes = async () => {
-    const result = await nameSearch('', pathname);
+    const result = await nameSearch('', '/foods');
     setSearchByFilter(result);
   };
 
@@ -30,7 +30,7 @@ export default function Foods() {
   }, []);
   /* eslint-enable */
 
-  if (history.location.pathname !== '/foods') return <FoodsId />;
+  if (pathname !== '/foods') return <FoodsId />;
 
   return (
     <div>
@@ -53,7 +53,7 @@ export default function Foods() {
       >
         All
       </button>
-      {(searchByFilter !== null && searchByFilter.length !== 1) && searchByFilter
+      {searchByFilter !== null && searchByFilter
         .map((food, index) => (
           <FoodCard
             key={ index }

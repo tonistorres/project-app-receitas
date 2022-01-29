@@ -13,7 +13,7 @@ export default function Drinks() {
   const history = useHistory();
   const { location: { pathname } } = history;
   const fetchRecipes = async () => {
-    const result = await nameSearch('', pathname);
+    const result = await nameSearch('', '/drinks');
     setSearchByFilter(result);
   };
   /* eslint-disable */

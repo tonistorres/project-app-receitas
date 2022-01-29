@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './Carrousel.css';
 
 export default function CarrouselFoods() {
-  const index = 1;
+  const [carrousel, setCarrousel] = useState([]);
+  const fetchCarrousel = async () => {
+    const result = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
+      .then((r) => r.json()).then((d) => d.meals);
+    const newArr = [];
+    result.forEach((i, index) => {
+      const NO_MAGIC_NUMBER = 6;
+      if (index < NO_MAGIC_NUMBER) {
+        newArr.push(i);
+      }
+      setCarrousel(newArr);
+    });
+  };
+  /* eslint-disable */
+  useEffect(() => {
+    fetchCarrousel();
+  }, []);
+    /* eslint-enable */
+  console.log(carrousel);
   return (
-    <div>
-      {`data-testid="${index}-recomendation-card"`}
-    </div>);
+    <div className="scrollCarrousel">
+      {carrousel.map((i, index) => (
+        <div data-testid={ `${index}-recomendation-card` } key={ index }>
+          <p>{i.strMeal}</p>
+          <img className="imgCarrousel" src={ i.strMealThumb } alt={ i.strMeal } />
+        </div>))}
+    </div>
+  );
 }

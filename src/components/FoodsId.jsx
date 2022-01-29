@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { searchFoodById } from '../services/fetch';
 import CarrouselFoods from './CarrouselFoods';
+import FavoriteBtn from './FavoriteBtn';
+import ShareBtn from './ShareBtn';
 
 export default function FoodsId() {
   const { id } = useParams();
+  const history = useHistory();
   const [foodsInProgress, setFoodsInProgress] = useState([]);
+  const [done, setDone] = useState(false);
   const [inProgress, setInprogress] = useState({
     ingredients: [],
     measures: [],
@@ -48,9 +52,20 @@ export default function FoodsId() {
     setInprogress(answer);
   };
 
+  const verifyDoneRecipe = () => {
+    const doneRec = JSON.parse(localStorage.getItem('doneRecipes'));
+    const findItem = doneRec && doneRec.find((i) => i.id === id);
+    if (findItem) {
+      setDone(true);
+    } else {
+      setDone(false);
+    }
+  };
+
 /* eslint-disable */
   useEffect(() => {
     requestFoods();
+    verifyDoneRecipe()
   }, []);
   /* eslint-enable */
 
@@ -61,21 +76,28 @@ export default function FoodsId() {
           <img src={ i.strMealThumb } alt={ i.strMeal } data-testid="recipe-photo" />
           <h1 data-testid="recipe-title">{i.strMeal}</h1>
           <p data-testid="recipe-category">{i.strCategory}</p>
-          <button data-testid="share-btn" type="button">Share</button>
-          <button data-testid="favorite-btn" type="button">Favoritar</button>
+          <ShareBtn />
+          <FavoriteBtn item={ i } local="foods" />
           {inProgress.ingredients
             .map((item, ind) => (
               <p
                 key={ ind }
                 data-testid={ `${ind}-ingredient-name-and-measure` }
               >
-                {`${inProgress.measures[index]} - ${item}`}
+                {`${inProgress.measures[ind]} - ${item}`}
               </p>))}
           <p data-testid="instructions">{i.strInstructions}</p>
           {i.strYoutube && (
             <embed data-testid="video" src={ convertUrl(i.strYoutube) } />)}
           <CarrouselFoods />
-          <button data-testid="start-recipe-btn" type="button">start</button>
+          {!done && (
+            <button
+              data-testid="start-recipe-btn"
+              onClick={ () => history.push(`/foods/${id}/in-progress`) }
+              type="button"
+            >
+              Start Recipe
+            </button>)}
         </div>
       ))}
     </div>

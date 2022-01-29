@@ -1,0 +1,9 @@
+.scrollCarrousel {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+.imgCarrousel {
+  width: 180px;
+}

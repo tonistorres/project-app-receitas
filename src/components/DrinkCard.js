@@ -7,8 +7,8 @@ export default function DrinkCard({ index, drink }) {
   const NO_MAGIC_NUMBER = 12;
   if (index >= NO_MAGIC_NUMBER) return null;
   return (
-    <Link to={ `/drinks/${idDrink}` }>
-      <p data-testid={ `${index}-recipe-card` }>{index}</p>
+    <Link to={ `/drinks/${idDrink}` } data-testid={ `${index}-recipe-card` }>
+      <p>{index}</p>
       <img src={ strDrinkThumb } data-testid={ `${index}-card-img` } alt={ strDrink } />
       <p data-testid={ `${index}-card-name` }>{strDrink}</p>
     </Link>);
