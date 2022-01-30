@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import profileIcon from '../images/profileIcon.svg';
 
 export default function Profile() {
   const [email, setEmail] = useState('');
   const history = useHistory();
-  /* eslint-disable */
+
   useEffect(() => {
     const getEmailLocalStorage = JSON.parse(localStorage.getItem('user'));
     if (getEmailLocalStorage) {
       setEmail(getEmailLocalStorage.email);
     }
   }, []);
-   /* eslint-enable */
+
   function logoutClick() {
     localStorage.clear();
     history.push('/');
@@ -21,8 +21,11 @@ export default function Profile() {
 
   return (
     <div>
-      <Header />
+      <h1 data-testid="page-title">Profile</h1>
       <p data-testid="profile-email">{email}</p>
+      <Link to="/profile">
+        <img src={ profileIcon } data-testid="profile-top-btn" alt="profile Icon" />
+      </Link>
       <button
         type="button"
         data-testid="profile-done-btn"

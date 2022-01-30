@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom';
 import drinkIcon from '../images/drinkIcon.svg';
 import exploreIcon from '../images/exploreIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
+import './Fotter.css';
 
 export default function Footer() {
   return (
-    <div data-testid="footer">
-      <Link to="/drinks" data-testid="drinks-bottom-btn">
-        <img src={ drinkIcon } alt="explore btn" />
+    <div
+      data-testid="footer"
+      className="container-main-footer"
+      style={ { position: 'fixed', bottom: 0 } }
+    >
+      <Link to="/drinks">
+        <img src={ drinkIcon } data-testid="drinks-bottom-btn" alt="explore btn" />
       </Link>
-      <Link to="/explore" data-testid="explore-bottom-btn">
-        <img src={ exploreIcon } alt="explore btn" />
+      <Link to="/explore">
+        <img src={ exploreIcon } data-testid="explore-bottom-btn" alt="explore btn" />
       </Link>
-      <Link to="/foods" data-testid="food-bottom-btn">
-        <img src={ mealIcon } alt="explore btn" />
+      <Link to="/foods">
+        <img src={ mealIcon } data-testid="food-bottom-btn" alt="explore btn" />
       </Link>
     </div>);
 }
