@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import IngredientsCheck from './IngredientsCheck';
 
-export default function IngredientsAndMeasures({ item }) {
+export default function IngredientsStep({ item }) {
   const [inProgress, setInprogress] = useState({
     ingredients: [],
     measures: [],
@@ -41,16 +42,17 @@ export default function IngredientsAndMeasures({ item }) {
     <div>
       {inProgress.ingredients
         .map((i, ind) => (
-          <p
-            key={ ind }
-            data-testid={ `${ind}-ingredient-name-and-measure` }
-          >
-            {`${inProgress.measures[ind]} - ${i}`}
-          </p>))}
+          <div key={ ind }>
+            <IngredientsCheck
+              index={ ind }
+              ingredient={ i }
+              measure={ inProgress.measures[ind] }
+            />
+          </div>))}
     </div>
   );
 }
 
-IngredientsAndMeasures.propTypes = {
+IngredientsStep.propTypes = {
   item: PropTypes.any,
 }.isRequired;

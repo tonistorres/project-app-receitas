@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { searchDrinkById } from '../services/fetch';
 import CarrouselDrinks from './CarrouselDrinks';
 import FavoriteBtn from './FavoriteBtn';
+import IngredientsAndMeasures from './IngredientsAndMeasures';
 import ShareBtn from './ShareBtn';
 
 export default function DrinksId() {
@@ -13,35 +14,7 @@ export default function DrinksId() {
   const [drinkInProgress, setDrinkInProgress] = useState([]);
   const [done, setDone] = useState(false);
   const [init, setInit] = useState(false);
-  const [inProgress, setInprogress] = useState({
-    ingredients: [],
-    measures: [],
-  });
 
-  const separeIngredientsAndMeasures = (obj) => {
-    const arrKeysIngredients = Object
-      .keys(obj).filter((key) => key.includes('strIngredient'));
-    const arrKeysMeasures = Object
-      .keys(obj).filter((key) => key.includes('strMeasure'));
-    const newIngArr = [];
-    const newIngMea = [];
-    arrKeysIngredients.forEach((i) => {
-      if (obj[i] !== null && obj[i] !== '') {
-        newIngArr.push(obj[i]);
-      }
-    });
-    arrKeysMeasures.forEach((i) => {
-      if (obj[i] !== null && obj[i] !== '') {
-        newIngMea.push(obj[i]);
-      }
-    });
-
-    const result = {
-      ingredients: newIngArr,
-      measures: newIngMea,
-    };
-    return result;
-  };
   const convertUrl = (url) => {
     const index = url.indexOf('=');
     const result = url.substr(index + 1);
@@ -50,9 +23,7 @@ export default function DrinksId() {
 
   const requestDrinks = async () => {
     const result = await searchDrinkById(id);
-    const answer = separeIngredientsAndMeasures(result[0]);
     setDrinkInProgress(result);
-    setInprogress(answer);
   };
 
   const verifyDoneRecipe = () => {
@@ -92,14 +63,7 @@ export default function DrinksId() {
           <p data-testid="recipe-category">{i.strAlcoholic}</p>
           <ShareBtn />
           <FavoriteBtn item={ i } local="drinks" />
-          {inProgress.ingredients
-            .map((item, ind) => (
-              <p
-                key={ ind }
-                data-testid={ `${ind}-ingredient-name-and-measure` }
-              >
-                {`${inProgress.measures[ind]} - ${item}`}
-              </p>))}
+          <IngredientsAndMeasures item={ i } />
           <p data-testid="instructions">{i.strInstructions}</p>
           {i.strVideo && (
             <embed data-testid="video" src={ convertUrl(i.strVideo) } type="video" />)}
