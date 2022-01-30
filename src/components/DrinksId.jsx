@@ -70,6 +70,7 @@ export default function DrinksId() {
           {!done && (
             <button
               data-testid="start-recipe-btn"
+              style={ { position: 'fixed', bottom: 0 } }
               type="button"
               onClick={ () => history.push(`/drinks/${id}/in-progress`) }
             >

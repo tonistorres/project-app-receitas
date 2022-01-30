@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import IngredientsCheck from './IngredientsCheck';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import IngredientsCheckDrinks from './IngredientsCheckDrinks';
+import IngredientsCheckFoods from './IngredientsCheckFoods';
 
 export default function IngredientsStep({ item }) {
   const [inProgress, setInprogress] = useState({
     ingredients: [],
     measures: [],
   });
+  const history = useHistory();
 
   const separeIngredientsAndMeasures = (obj) => {
     const arrKeysIngredients = Object
@@ -38,16 +41,25 @@ export default function IngredientsStep({ item }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const { location: { pathname } } = history;
+
   return (
     <div>
       {inProgress.ingredients
         .map((i, ind) => (
           <div key={ ind }>
-            <IngredientsCheck
-              index={ ind }
-              ingredient={ i }
-              measure={ inProgress.measures[ind] }
-            />
+            {pathname.includes('drinks') ? (
+              <IngredientsCheckDrinks
+                index={ ind }
+                ingredient={ i }
+                measure={ inProgress.measures[ind] }
+              />
+            ) : (
+              <IngredientsCheckFoods
+                index={ ind }
+                ingredient={ i }
+                measure={ inProgress.measures[ind] }
+              />)}
           </div>))}
     </div>
   );

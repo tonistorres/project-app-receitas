@@ -24,7 +24,9 @@ export default function Drinks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchByFilter]);
   useEffect(() => {
-    fetchRecipes();
+    if (searchByFilter !== []) {
+      fetchRecipes();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

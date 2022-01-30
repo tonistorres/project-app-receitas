@@ -8,7 +8,7 @@ const createNewObj = (local, item, id) => {
   if (local === 'foods') {
     return {
       id,
-      type: 'meals',
+      type: 'foods',
       nationality: item.strArea ? item.strArea : '',
       category: item.strCategory ? item.strCategory : '',
       alcoholicOrNot: item.strAlcoholic ? item.strAlcoholic : '',
