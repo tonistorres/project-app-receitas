@@ -13,11 +13,12 @@ export default function DrinksInProgress() {
     const result = await searchDrinkById(id);
     setCurrentDrink(result);
   };
-  /* eslint-disable */
+
   useEffect(() => {
     fetchDrink();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* eslint-enable */
+
   return (
     <div>
       {currentDrink.map((i, index) => (

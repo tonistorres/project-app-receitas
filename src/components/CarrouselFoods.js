@@ -15,11 +15,12 @@ export default function CarrouselFoods() {
       setCarrousel(newArr);
     });
   };
-  /* eslint-disable */
+
   useEffect(() => {
     fetchCarrousel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-    /* eslint-enable */
+
   console.log(carrousel);
   return (
     <div className="scrollCarrousel">

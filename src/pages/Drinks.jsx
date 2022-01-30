@@ -16,16 +16,18 @@ export default function Drinks() {
     const result = await nameSearch('', '/drinks');
     setSearchByFilter(result);
   };
-  /* eslint-disable */
-    useEffect(() => {
-      if (!searchByFilter[0]) {
-        fetchRecipes();
-      }
-    }, [searchByFilter]);
-    useEffect(() => {
+
+  useEffect(() => {
+    if (!searchByFilter[0]) {
       fetchRecipes();
-    }, []);
-    /* eslint-enable */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchByFilter]);
+  useEffect(() => {
+    fetchRecipes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   if (history.location.pathname !== '/drinks') return <DrinksId />;
   return (
     <div>

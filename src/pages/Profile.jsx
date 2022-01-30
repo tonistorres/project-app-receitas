@@ -6,14 +6,14 @@ import profileIcon from '../images/profileIcon.svg';
 export default function Profile() {
   const [email, setEmail] = useState('');
   const history = useHistory();
-  /* eslint-disable */
+
   useEffect(() => {
     const getEmailLocalStorage = JSON.parse(localStorage.getItem('user'));
     if (getEmailLocalStorage) {
       setEmail(getEmailLocalStorage.email);
     }
   }, []);
-   /* eslint-enable */
+
   function logoutClick() {
     localStorage.clear();
     history.push('/');

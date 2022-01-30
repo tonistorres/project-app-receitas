@@ -19,16 +19,16 @@ export default function Foods() {
     setSearchByFilter(result);
   };
 
-  /* eslint-disable */
   useEffect(() => {
     if (!searchByFilter[0]) {
-      fetchRecipes()
+      fetchRecipes();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchByFilter]);
   useEffect(() => {
     fetchRecipes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* eslint-enable */
 
   if (pathname !== '/foods') return <FoodsId />;
 

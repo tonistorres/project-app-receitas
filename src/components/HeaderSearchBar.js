@@ -78,13 +78,12 @@ export default function HeaderSearchBar() {
     }
   };
 
-  /* eslint-disable */
-    useEffect(() => {
-      if (redirect) {
-        verifyPushHistory();
-      }
-    }, [searchByFilter]);
-    /* eslint-enable */
+  useEffect(() => {
+    if (redirect) {
+      verifyPushHistory();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchByFilter]);
 
   return (
     <div>

@@ -33,12 +33,11 @@ export default function FoodsId() {
     }
   };
 
-/* eslint-disable */
   useEffect(() => {
     requestFoods();
-    verifyDoneRecipe()
+    verifyDoneRecipe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* eslint-enable */
 
   return (
     <div>

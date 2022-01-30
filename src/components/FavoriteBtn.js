@@ -53,16 +53,14 @@ export default function FavoriteBtn({ item, local }) {
     }
   };
 
-  /* eslint-disable */
   useEffect(() => {
     const favRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
-    if(!favRecipes) {
+    if (!favRecipes) {
       localStorage.setItem('favoriteRecipes', JSON.stringify([]));
     }
     verifyFavorite();
-    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-    /* eslint-enable */
 
   return (
     <div>

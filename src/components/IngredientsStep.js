@@ -31,12 +31,12 @@ export default function IngredientsStep({ item }) {
     };
     return result;
   };
-/* eslint-disable */
+
   useEffect(() => {
     const result = separeIngredientsAndMeasures(item);
     setInprogress(result);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* eslint-enable */
 
   return (
     <div>

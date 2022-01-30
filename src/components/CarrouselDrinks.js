@@ -16,11 +16,10 @@ export default function CarrouselDrinks() {
       setCarrousel(newArr);
     });
   };
-  /* eslint-disable */
+
   useEffect(() => {
     fetchCarrousel();
   }, []);
-    /* eslint-enable */
 
   return (
     <div className="scrollCarrousel">

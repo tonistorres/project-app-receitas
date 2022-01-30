@@ -45,13 +45,12 @@ export default function DrinksId() {
     }
   };
 
-/* eslint-disable */
   useEffect(() => {
     requestDrinks();
     verifyDoneRecipe();
     verifyInit();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* eslint-enable */
 
   // tag de video = https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/embed
   return (
