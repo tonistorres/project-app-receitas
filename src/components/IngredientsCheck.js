@@ -4,62 +4,60 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function IngredientsCheck({ ingredient, measure, index }) {
   const [stateClass, setStateClass] = useState('');
-  // const { id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
   const { location: { pathname } } = history;
   console.log(pathname.includes('drink'));
 
-  // const addLocalStorage = (cocktails) => {
-  //   const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
-  //   const arrId = getLocalStorage[cocktails][id];
-  //   if (arrId[0]) {
-  //     const newArr = [...arrId, `${measure} - ${ingredient}`];
-  //     const newObj = {
-  //       ...getLocalStorage,
-  //       [cocktails]: { ...getLocalStorage[cocktails], [id]: newArr },
-  //     };
-  //     JSON.setItem('inProgressRecipes', JSON.stringify(newObj));
-  //   } else {
-  //     const newArr = [`${measure} - ${ingredient}`];
-  //     const newObj = {
-  //       ...getLocalStorage,
-  //       [cocktails]: { ...getLocalStorage[cocktails], [id]: newArr },
-  //     };
-  //     JSON.setItem('inProgressRecipes', JSON.stringify(newObj));
-  //   }
-  // };
+  const addLocalStorage = (cocktails) => { // meals ou cocktails
+    const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
+    const getArrLocal = getLocalStorage[cocktails].concat(ingredient);
+    const obj = {
+      ...getLocalStorage,
+      [cocktails]: { ...getLocalStorage[cocktails], [id]: getArrLocal },
+    };
+    localStorage.setItem('inProgressRecipes', JSON.stringify(obj));
+  };
 
-  // const removeLocalStorage = (cocktails) => {
-  //   const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
-  //   const arrId = getLocalStorage[cocktails][id];
-  //   if (arrId[0]) {
-  //     const newArr = getLocalStorage.filter((i) => i !== `${measure} - ${ingredient}`);
-  //     const newObj = {
-  //       ...getLocalStorage,
-  //       [cocktails]: { ...getLocalStorage[cocktails], [id]: newArr },
-  //     };
-  //     JSON.setItem('inProgressRecipes', JSON.stringify(newObj));
-  //   }
-  // };
+  const removeLocalStorage = (cocktails) => {
+    const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
+    const getArrLocal = getLocalStorage[cocktails].filter((i) => i !== ingredient);
+    const obj = {
+      ...getLocalStorage,
+      [cocktails]: { ...getLocalStorage[cocktails], [id]: getArrLocal },
+    };
+    localStorage.setItem('inProgressRecipes', JSON.stringify(obj));
+  };
 
   const handleChange = () => {
-    if (stateClass === 'complete') {
+    if (stateClass === 'inProgress') {
+      const path = pathname.includes('drink') ? 'cocktails' : 'meals';
+      removeLocalStorage(path);
       setStateClass('');
     } else {
-      setStateClass('complete');
+      setStateClass('inProgress');
+      const path = pathname.includes('drink') ? 'cocktails' : 'meals';
+      addLocalStorage(path);
     }
   };
 
   useEffect(() => {
     const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
+    let obj = { cocktails: {}, meals: {} };
+    if (pathname.includes('drink')) {
+      obj = { cocktails: { [id]: [] }, meals: {} };
+    } else {
+      obj = { cocktails: {}, meals: { [id]: [] } };
+    }
     if (!getLocalStorage) {
       localStorage
-        .setItem('inProgressRecipes', JSON.stringify({ cocktails: {}, meals: {} }));
+        .setItem('inProgressRecipes', JSON.stringify(obj));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div>
+    <div style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }>
       <p
         data-testid={ `data-testid=${index}-ingredient-step` }
       >
