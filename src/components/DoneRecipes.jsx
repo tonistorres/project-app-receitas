@@ -4,49 +4,96 @@ import profileIcon from '../images/profileIcon.svg';
 import ShareBtnDone from './ShareBtnDone';
 
 export default function DoneRecipes() {
-  const [doneState, setDoneState] = useState([]);
-  const getDoneRecipes = () => {
-    const getDone = JSON.parse(localStorage.getItem('doneRecipes'));
-    setDoneState(getDone);
-  };
+  const [filter, setFilter] = React.useState('All');
+  const [elementsFilter, setElementsFilter] = useState([]);
+  const doneRecipes = JSON.parse(localStorage.getItem('doneRecipes'));
+
   useEffect(() => {
-    const getLocal = JSON.parse(localStorage.getItem('doneRecipes'));
-    if (!getLocal) {
-      localStorage.setItem('doneRecipes', JSON.stringify([]));
+    if (filter === 'Drink') {
+      setElementsFilter(doneRecipes.filter((item) => item.type.includes('drink')));
     }
-    getDoneRecipes();
-  }, []);
+    if (filter === 'Food') {
+      setElementsFilter(doneRecipes.filter((item) => item.type.includes('food')));
+    }
+    if (filter === 'All') {
+      setElementsFilter(doneRecipes);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter]);
+
+  const convertLink = (tipo, id) => {
+    if (tipo.includes('food')) {
+      return `/foods/${id}`;
+    }
+    return `/drinks/${id}`;
+  };
 
   return (
     <div>
-      <h1 data-testid="page-title">Done Recipes</h1>
-      <Link to="/profile">
-        <img src={ profileIcon } data-testid="profile-top-btn" alt="profile Icon" />
-      </Link>
-      <button type="button" data-testid="filter-by-all-btn">All</button>
-      <button type="button" data-testid="filter-by-food-btn">Food</button>
-      <button type="button" data-testid="filter-by-drink-btn">Drink</button>
-      {doneState.map((i, index) => (
-        <div key={ index }>
-          <img
-            src={ i.image }
-            data-testid={ `${index}-horizontal-image` }
-            alt={ i.name }
-          />
-          <p data-testid={ `${index}-horizontal-top-text` }>
-            {i.type.includes('drink') ? i.alcoholicOrNot : i.category }
-          </p>
-          <p data-testid={ `${index}-horizontal-name` }>{i.name}</p>
-          <p data-testid={ `${index}-horizontal-done-date` }>{i.doneDate}</p>
-          <ShareBtnDone
-            index={ index }
-            local={ i.type }
-            id={ i.id }
-          />
-          {i.tags.filter((_item, ind) => ind < 2).map((tag, indice) => (
-            <p key={ indice } data-testid={ `${indice}-${tag}-horizontal-tag` }>{tag}</p>
-          ))}
-        </div>
-      ))}
-    </div>);
+      <section>
+        <h1 data-testid="page-title">Done Recipes</h1>
+        <Link to="/profile">
+          <img src={ profileIcon } data-testid="profile-top-btn" alt="profile Icon" />
+        </Link>
+        <button
+          type="button"
+          data-testid="filter-by-all-btn"
+          onClick={ () => setFilter('All') }
+        >
+          All
+        </button>
+        <button
+          type="button"
+          data-testid="filter-by-food-btn"
+          onClick={ () => setFilter('Food') }
+        >
+          Food
+        </button>
+        <button
+          type="button"
+          data-testid="filter-by-drink-btn"
+          onClick={ () => setFilter('Drink') }
+        >
+          Drink
+        </button>
+        {elementsFilter && elementsFilter.map((i, index) => (
+          <div key={ index }>
+            <Link
+              to={ convertLink(i.type, i.id) }
+            >
+              <img
+                style={ { width: 30 } }
+                src={ i.image }
+                data-testid={ `${index}-horizontal-image` }
+                alt={ i.name }
+              />
+            </Link>
+            <p data-testid={ `${index}-horizontal-top-text` }>
+              {i.nationality !== ''
+                ? `${i.nationality} - ${i.category}` : i.alcoholicOrNot }
+            </p>
+            <Link to={ convertLink(i.type, i.id) }>
+              <p data-testid={ `${index}-horizontal-name` }>{i.name}</p>
+            </Link>
+            <ShareBtnDone
+              index={ index }
+              local={ i.type.includes('food') ? 'foods' : 'drinks' }
+              id={ i.id }
+            />
+
+            <p data-testid={ `${index}-horizontal-done-date` }>
+              {i.doneDate}
+            </p>
+            { i.tags.map((item) => (
+              <p
+                key={ index }
+                data-testid={ `${index}-${item}-horizontal-tag` }
+              >
+                {item}
+              </p>))}
+          </div>
+        ))}
+      </section>
+    </div>
+  );
 }

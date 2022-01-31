@@ -22,7 +22,7 @@ export default function FavoriteRecipes() {
   };
 
   const filterByFood = () => {
-    const newArr = [...favoriteState].filter((i) => i.tag !== 'drinks');
+    const newArr = favoriteState.filter((i) => i.tag !== 'drinks');
     setFilterState(newArr);
   };
 
