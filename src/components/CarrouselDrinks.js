@@ -13,8 +13,8 @@ export default function CarrouselDrinks() {
       if (index < NO_MAGIC_NUMBER) {
         newArr.push(i);
       }
-      setCarrousel(newArr);
     });
+    setCarrousel(newArr);
   };
 
   useEffect(() => {

@@ -8,7 +8,7 @@ const createNewObj = (local, item, id) => {
   if (local === 'foods') {
     return {
       id,
-      type: 'meals',
+      type: 'food',
       nationality: item.strArea ? item.strArea : '',
       category: item.strCategory ? item.strCategory : '',
       alcoholicOrNot: item.strAlcoholic ? item.strAlcoholic : '',
@@ -18,7 +18,7 @@ const createNewObj = (local, item, id) => {
   }
   return {
     id,
-    type: 'drinks',
+    type: 'drink',
     nationality: item.strArea ? item.strArea : '',
     category: item.strCategory,
     alcoholicOrNot: item.strAlcoholic ? item.strAlcoholic : '',
@@ -64,7 +64,12 @@ export default function FavoriteBtn({ item, local }) {
 
   return (
     <div>
-      <button data-testid="favorite-btn" type="button" onClick={ () => handleClick() }>
+      <button
+        data-testid="favorite-btn"
+        type="button"
+        onClick={ () => handleClick() }
+        src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
+      >
         <img src={ isFavorite ? blackHeartIcon : whiteHeartIcon } alt="favorite Btn" />
       </button>
     </div>

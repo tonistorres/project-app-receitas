@@ -12,8 +12,8 @@ export default function CarrouselFoods() {
       if (index < NO_MAGIC_NUMBER) {
         newArr.push(i);
       }
-      setCarrousel(newArr);
     });
+    setCarrousel(newArr);
   };
 
   useEffect(() => {
@@ -21,10 +21,9 @@ export default function CarrouselFoods() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(carrousel);
   return (
     <div className="scrollCarrousel">
-      {carrousel.map((i, index) => (
+      {carrousel.filter((_item, ind) => ind < 2).map((i, index) => (
         <div data-testid={ `${index}-recomendation-card` } key={ index }>
           <p>{i.strMeal}</p>
           <img className="imgCarrousel" src={ i.strMealThumb } alt={ i.strMeal } />

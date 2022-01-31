@@ -6,7 +6,7 @@ import DrinksId from '../components/DrinksId';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import context from '../context/context';
-import { nameSearch } from '../services/fetch';
+import { ingredientsSearch, nameSearch } from '../services/fetch';
 
 export default function Drinks() {
   const { searchByFilter, drinkCategory, setSearchByFilter } = useContext(context);
@@ -17,14 +17,27 @@ export default function Drinks() {
     setSearchByFilter(result);
   };
 
+  const verifyStateLocation = async () => {
+    const { location: { state } } = history;
+    if (state) {
+      const result = await ingredientsSearch(state, '/drinks');
+      setSearchByFilter(result);
+    }
+  };
+
   useEffect(() => {
-    if (!searchByFilter[0]) {
+    const { location: { state } } = history;
+    if (!searchByFilter[0] && !state) {
       fetchRecipes();
+    } else {
+      verifyStateLocation();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchByFilter]);
   useEffect(() => {
-    fetchRecipes();
+    if (searchByFilter !== []) {
+      fetchRecipes();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

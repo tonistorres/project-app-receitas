@@ -9,7 +9,12 @@ export default function DrinkCard({ index, drink }) {
   return (
     <Link to={ `/drinks/${idDrink}` } data-testid={ `${index}-recipe-card` }>
       <p>{index}</p>
-      <img src={ strDrinkThumb } data-testid={ `${index}-card-img` } alt={ strDrink } />
+      <img
+        src={ strDrinkThumb }
+        style={ { width: 30 } }
+        data-testid={ `${index}-card-img` }
+        alt={ strDrink }
+      />
       <p data-testid={ `${index}-card-name` }>{strDrink}</p>
     </Link>);
 }
