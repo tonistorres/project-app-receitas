@@ -84,7 +84,7 @@ export default function DoneRecipes() {
             <p data-testid={ `${index}-horizontal-done-date` }>
               {i.doneDate}
             </p>
-            { i.tags.map((item) => (
+            { i.tags && i.tags.map((item) => (
               <p
                 key={ index }
                 data-testid={ `${index}-${item}-horizontal-tag` }

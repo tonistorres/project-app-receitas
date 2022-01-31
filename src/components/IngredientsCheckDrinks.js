@@ -60,12 +60,8 @@ export default function IngredientsCheckDrinks({ ingredient, measure, index }) {
 
   return (
     <div style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }>
-      <p
-        data-testid={ `data-testid=${index}-ingredient-step` }
-      >
+      <label htmlFor="check" data-testid={ `data-testid=${index}-ingredient-step` }>
         {`${measure} - ${ingredient}`}
-      </p>
-      <label htmlFor="check">
         <input
           type="checkbox"
           id="check"

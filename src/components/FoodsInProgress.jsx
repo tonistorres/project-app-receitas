@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { searchFoodById } from '../services/fetch';
 import FavoriteBtn from './FavoriteBtn';
 import IngredientsStep from './IngredientsStep';
@@ -7,12 +8,12 @@ import ShareBtn from './ShareBtn';
 
 export default function FoodsInProgress() {
   const [currentFood, setCurrentFood] = useState([]);
+  const history = useHistory();
   const { id } = useParams();
 
   const fetchFood = async () => {
     const result = await searchFoodById(id);
     setCurrentFood(result);
-    console.log(result);
   };
   const saveLocalStorage = (i) => {
     const getLocal = JSON.parse(localStorage.getItem('doneRecipes'));
@@ -29,6 +30,7 @@ export default function FoodsInProgress() {
     };
     const newArr = [...getLocal, obj];
     localStorage.setItem('doneRecipes', JSON.stringify(newArr));
+    history.push('/done-recipes');
   };
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function FoodsInProgress() {
           >
             Finish
           </button>
-          <IngredientsStep item={ i } />
+          <IngredientsStep item={ i } index={ index } />
         </div>
       ))}
     </div>

@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import IngredientsCheckDrinks from './IngredientsCheckDrinks';
 import IngredientsCheckFoods from './IngredientsCheckFoods';
 
-export default function IngredientsStep({ item }) {
+export default function IngredientsStep({ item, index }) {
   const [inProgress, setInprogress] = useState({
     ingredients: [],
     measures: [],
@@ -50,13 +50,13 @@ export default function IngredientsStep({ item }) {
           <div key={ ind }>
             {pathname.includes('drinks') ? (
               <IngredientsCheckDrinks
-                index={ ind }
+                index={ index }
                 ingredient={ i }
                 measure={ inProgress.measures[ind] }
               />
             ) : (
               <IngredientsCheckFoods
-                index={ ind }
+                index={ index }
                 ingredient={ i }
                 measure={ inProgress.measures[ind] }
               />)}
