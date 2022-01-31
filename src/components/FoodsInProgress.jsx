@@ -12,6 +12,7 @@ export default function FoodsInProgress() {
   const fetchFood = async () => {
     const result = await searchFoodById(id);
     setCurrentFood(result);
+    console.log(result);
   };
   const saveLocalStorage = (i) => {
     const getLocal = JSON.parse(localStorage.getItem('doneRecipes'));
@@ -41,9 +42,14 @@ export default function FoodsInProgress() {
 
   return (
     <div>
-      {currentFood.map((i, index) => (
+      {currentFood && currentFood.map((i, index) => (
         <div key={ index }>
-          <img data-testid="recipe-photo" src={ i.strMealThumb } alt={ i.strMeal } />
+          <img
+            data-testid="recipe-photo"
+            style={ { width: 50 } }
+            src={ i.strMealThumb }
+            alt={ i.strMeal }
+          />
           <p data-testid="recipe-title">{i.strMeal}</p>
           <ShareBtn />
           <FavoriteBtn item={ i } local="foods" />

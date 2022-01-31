@@ -44,7 +44,12 @@ export default function DrinksInProgress() {
     <div>
       {currentDrink.map((i, index) => (
         <div key={ index }>
-          <img data-testid="recipe-photo" src={ i.strDrinkThumb } alt={ i.strDrink } />
+          <img
+            data-testid="recipe-photo"
+            style={ { width: 50 } }
+            src={ i.strDrinkThumb }
+            alt={ i.strDrink }
+          />
           <p data-testid="recipe-title">{i.strDrink}</p>
           <ShareBtn />
           <FavoriteBtn item={ i } local="drinks" />

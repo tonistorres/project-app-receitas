@@ -32,11 +32,6 @@ export default function IngredientsCheckFoods({ ingredient, measure, index }) {
 
   const verifyUseEffect = () => {
     const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
-    if (!getLocalStorage) {
-      const obj = { cocktails: {}, meals: { [id]: [] } };
-      localStorage
-        .setItem('inProgressRecipes', JSON.stringify(obj));
-    }
     if (getLocalStorage.meals && !getLocalStorage.meals[id]) {
       getLocalStorage.meals[id] = [];
       localStorage.setItem('inProgressRecipes', JSON.stringify(getLocalStorage));
@@ -52,9 +47,13 @@ export default function IngredientsCheckFoods({ ingredient, measure, index }) {
 
   useEffect(() => {
     const getLocalStorage = JSON.parse(localStorage.getItem('inProgressRecipes'));
-    verifyUseEffect();
-    if (getLocalStorage.meals[id]) {
+    if (getLocalStorage) {
+      verifyUseEffect();
       verifyLocal();
+    } else {
+      const obj = { cocktails: {}, meals: { [id]: [] } };
+      localStorage
+        .setItem('inProgressRecipes', JSON.stringify(obj));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

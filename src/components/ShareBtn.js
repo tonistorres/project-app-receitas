@@ -11,8 +11,13 @@ export default function ShareBtn({ type, id }) {
   const copyToClipBoard = () => {
     if (!id && !type) {
       const { pathname } = history.location;
-      Copy(`http://localhost:3000/${pathname}`);
-      setCopy(true);
+      if (pathname.includes('in-progress')) {
+        Copy(`http://localhost:3000${pathname.split('/in-')[0]}`);
+        setCopy(true);
+      } else {
+        Copy(`http://localhost:3000${pathname}`);
+        setCopy(true);
+      }
     } else {
       Copy(`http://localhost:3000/${type}/${id}`);
       setCopy(true);
@@ -20,7 +25,12 @@ export default function ShareBtn({ type, id }) {
   };
   return (
     <div>
-      <button data-testid="share-btn" type="button" onClick={ () => copyToClipBoard() }>
+      <button
+        data-testid="share-btn"
+        type="button"
+        onClick={ () => copyToClipBoard() }
+        src={ shareIcon }
+      >
         <img src={ shareIcon } alt="share" />
       </button>
       {copy && <p>Link copied!</p>}
