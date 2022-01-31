@@ -8,15 +8,17 @@ export default function FoodCard({ index, food }) {
   if (index >= NO_MAGIC_NUMBER) return null;
 
   return (
-    <Link to={ `/foods/${idMeal}` } data-testid={ `${index}-recipe-card` }>
-      <img
-        src={ strMealThumb }
-        style={ { width: 30 } }
-        data-testid={ `${index}-card-img` }
-        alt={ strMeal }
-      />
-      <p data-testid={ `${index}-card-name` }>{strMeal}</p>
-    </Link>);
+    <div>
+      <Link to={ `/foods/${idMeal}` } data-testid={ `${index}-recipe-card` }>
+        <img
+          src={ strMealThumb }
+          style={ { width: 30 } }
+          data-testid={ `${index}-card-img` }
+          alt={ strMeal }
+        />
+        <p data-testid={ `${index}-card-name` }>{strMeal}</p>
+      </Link>
+    </div>);
 }
 
 FoodCard.propTypes = {

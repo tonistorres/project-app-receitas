@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { searchFoodById } from '../services/fetch';
 import CarrouselFoods from './CarrouselFoods';
 import FavoriteBtn from './FavoriteBtn';
 import IngredientsAndMeasures from './IngredientsAndMeasures';
@@ -24,7 +23,9 @@ export default function FoodsId() {
     return teste;
   };
   const requestFoods = async () => {
-    const result = await searchFoodById(id);
+    const result = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+      .then((r) => r.json())
+      .then((data) => data.meals);
     setFoodsInProgress(result);
     fetchAleatorioParaCypress();
   };

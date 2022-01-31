@@ -53,13 +53,15 @@ export default function Foods() {
       >
         All
       </button>
-      {searchByFilter !== null && searchByFilter
-        .map((food, index) => (
-          <FoodCard
-            key={ index }
-            index={ index }
-            food={ food }
-          />))}
+      <section>
+        {searchByFilter !== null && searchByFilter
+          .map((food, index) => (
+            <FoodCard
+              key={ index }
+              index={ index }
+              food={ food }
+            />))}
+      </section>
       <Footer />
     </div>
   );
