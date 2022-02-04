@@ -2,6 +2,7 @@ import Copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import shareIcon from '../images/shareIcon.svg';
+import './ShareDoneBtnDone.css';
 
 export default function ShareBtnDone({ local, id, index }) {
   const [copy, setCopy] = useState(false);
@@ -11,7 +12,7 @@ export default function ShareBtnDone({ local, id, index }) {
     setCopy(true);
   };
   return (
-    <div>
+    <div className="container-main-share-btn-done">
       <button
         data-testid={ `${index}-horizontal-share-btn` }
         type="button"

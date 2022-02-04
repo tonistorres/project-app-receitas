@@ -1,0 +1,29 @@
+.container-main-share-btn-done {
+  /* background-color: rebeccapurple; */
+  /* border: 1px solid red; */
+  border: none;
+  height: 60px;
+  widsth: 60px;
+}
+
+.container-main-share-btn-done img {
+  height: 20px;
+  width: 17px;
+}
+
+.container-main-share-btn-done button {
+    background-color: #c3ce6a;
+    border-radius: 0 35px 35px;
+    box-shadow: none;
+    padding: none;
+    margin: none;
+}
+
+
+.container-main-share-btn-done button:hover {
+    background-color: orange;
+    border-radius: 0 35px 35px;
+    box-shadow: none;
+    padding: none;
+    margin: none;
+}

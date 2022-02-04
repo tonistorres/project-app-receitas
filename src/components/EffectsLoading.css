@@ -1,0 +1,28 @@
+.effect-css-moviment-1 {
+  align-items: center;
+  border: 2px solid red;
+  display: flex;
+  font-size: 48px;
+  font-weight: 700;
+  justify-content: center;
+  width: 100%;
+}
+
+@keyframes effect-move-1 {
+
+  10% {
+    margin-bottom: 75px;
+  }
+
+  50% {
+    margin-bottom: 150px;
+  }
+
+  75% {
+    margin-bottom: 205px;
+  }
+
+  100% {
+    margin-bottom: 300px;
+  }
+}

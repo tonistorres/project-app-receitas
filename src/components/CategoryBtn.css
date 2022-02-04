@@ -1,0 +1,51 @@
+.container-butons-category-btn {
+  align-items: center;
+  display: flex;
+  height: 5vh;
+  width: 100px;
+}
+
+.container-butons-category-btn button {
+  background: #24292f;
+  border-radius: 8px;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 700;
+  height: 4.5vh;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+.container-butons-category-btn button:hover {
+  background: #fd7e14;
+  border-radius: 8px;
+  color: #24292f;
+  font-size: 16px;
+  font-weight: 700;
+  height: 4.5vh;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+.btn-all-category {
+  background: #24292f;
+  border-radius: 8px;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 700;
+  height: 4.5vh;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+
+.btn-all-category:hover {
+  background: #fd7e14;
+  border-radius: 8px;
+  color: #24292f;
+  font-size: 16px;
+  font-weight: 700;
+  height: 4.5vh;
+  letter-spacing: 3px;
+  width: 100px;
+}

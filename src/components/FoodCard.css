@@ -1,0 +1,70 @@
+
+.container-main-foods {
+  background:whitesmoke;
+  display: flex;
+  height: 640px;
+  width: 320px;
+}
+
+.container-main-food-card {
+  align-items: center;
+  background-color: #343a40;
+  /* border: 2px solid red; */
+  border-radius: 15px;
+  display: flex;
+  height: 97%;
+  justify-content: center;
+  margin-bottom: 5px;
+  /* margin-left: 5px;  */
+  padding-left: 20px;
+  margin-top: 5px;
+  width: 49%;
+}
+
+
+.container-conteudo {
+  align-items: center;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+.container-conteudo img {
+  /* border:3px solid blue; */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 85px 55px 85px 1px;
+  height: 60%;
+  width: 60%;
+}
+
+.container-conteudo img:hover {
+  border:3px solid #fd7e14;
+  border-radius: 110px 80px 110px 1px;
+  height: 70%;
+  width: 70%;
+}
+
+
+.container-conteudo p {
+  color: whitesmoke;
+  font-size: 15px;
+  height: 100%;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+
+.container-conteudo p:hover {
+  color: #fd7e14;
+  font-size: 15px;
+  height: 100%;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+}
+

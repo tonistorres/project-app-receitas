@@ -1,7 +1,35 @@
 .container-main-footer {
-  background: #343a40;
+  border-bottom: 10px solid #24292F;
+  border-radius: 15px;
   display: flex;
-  height: 45px;
+  height: 70px;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.btn-fotter-style {
+  background:#c3ce6a;
+  border-radius: 35px 25px 55px 1px;
+  color:whitesmoke;
+  /* filter: brightness(1) sepia(5) saturate(5) hue-rotate(80deg); */
+  padding: 8px 8px;
+}
+
+.btn-fotter-style:hover {
+  animation: rotating 6s;
+  background:yellowgreen;
+  border-radius: 35px 25px 55px 1px;
+  color:whitesmoke;
+  padding: 8px 8px;
+}
+
+@keyframes rotating {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
 }

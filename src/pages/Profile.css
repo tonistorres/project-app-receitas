@@ -1,0 +1,111 @@
+.container-main-profile {
+  align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+.cotainer-header-profile {
+  align-items: center;
+  background-color: whitesmoke;
+  /* border: 8px solid blue; */
+  border-bottom: 10px solid #24292f;
+  border-radius: 20px;
+  border-top: 10px solid #fd7e14;
+  display: flex;
+  margin-bottom: 10px;
+  width: 320px;
+}
+
+.cotainer-header-profile img {
+  background-color: yellowgreen;
+  border-radius: 0 25px 25px ;
+ /* border: 5px solid aquamarine; */
+  margin-left: 20px;
+  padding: 5px 15px;
+}
+
+.cotainer-header-profile img:hover {
+  background-color: #fd7e14;
+  border-radius: 0 25px 25px;
+  margin-left: 20px;
+  padding: 5px 15px;
+}
+
+.cotainer-header-profile h1 {
+  align-items: center;
+  /* border: 2px solid aquamarine; */
+  color: #343a40;
+  display: flex;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 35px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 5px;
+  margin-top: 5px;
+  width: 260px;
+
+}
+
+.conteiner-body-profeile p {
+  background-color: #9e8606;
+  /* border: 2px solid greenyellow; */
+  border-radius: 0 25px 25px;
+  color: whitesmoke;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 15px 15px 15px 15px;
+}
+
+
+.conteiner-body-profeile p:hover {
+  background-color: #c3ce6a;
+  /* border: 2px solid greenyellow; */
+  border-radius: 0 25px 25px;
+  color: #343a40;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 15px 15px;
+}
+  
+.container-conteudo-profile {
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  min-height: 506px;
+}
+
+.conteiner-body-profeile {
+  align-items: center;
+  /* border: 2px solid gold; */
+  display: flex;
+  flex-direction: column;
+  height: 51vh;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.conteiner-body-profeile button {
+  background-color: yellowgreen;
+  border-radius: 0 25px 25px;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 25px;
+  font-weight: 700;
+  height: 6vh;
+  width: 200px;
+}
+
+.conteiner-body-profeile button:hover {
+    background-color: #0C9420;
+    border-radius: 0 25px 25px;
+    color: whitesmoke;
+    font-family: ' Architects Daughter' , cursive;
+    font-size: 25px;
+    font-weight: 700;
+    height: 6vh;
+    width: 200px;
+  }
+  

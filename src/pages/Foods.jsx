@@ -3,10 +3,12 @@ import { useHistory } from 'react-router-dom';
 import CategoryBtn from '../components/CategoryBtn';
 import FoodCard from '../components/FoodCard';
 import FoodsId from '../components/FoodsId';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Fotter from '../components/Footer';
 import context from '../context/context';
 import { ingredientsSearch, nameSearch } from '../services/fetch';
+import './Foods.css';
+import '../index.css';
 
 export default function Foods() {
   const { searchByFilter,
@@ -44,27 +46,29 @@ export default function Foods() {
   if (pathname !== '/foods') return <FoodsId />;
 
   return (
-    <div>
-      <h1 data-testid="page-title">
-        Foods
-      </h1>
-      <Header />
-      {foodCategory
-        .map((i, index) => (
-          <CategoryBtn
-            category={ i }
-            pathname={ pathname }
-            index={ index }
-            key={ index }
-          />))}
-      <button
-        type="button"
-        data-testid="All-category-filter"
-        onClick={ () => setSearchByFilter([]) }
-      >
-        All
-      </button>
-      <section>
+    <div className="container-main-foods">
+      <h1 data-testid="page-title"> </h1>
+      <Header name="Foods" />
+      <div className="container-buttons-food">
+        {foodCategory
+          .map((i, index) => (
+            <CategoryBtn
+              category={ i }
+              pathname={ pathname }
+              index={ index }
+              key={ index }
+            />))}
+
+        <button
+          type="button"
+          data-testid="All-category-filter"
+          className="btn-all-category"
+          onClick={ () => setSearchByFilter([]) }
+        >
+          All
+        </button>
+      </div>
+      <section className="body-food-main">
         {searchByFilter !== null && searchByFilter
           .map((food, index) => (
             <FoodCard
@@ -73,7 +77,7 @@ export default function Foods() {
               food={ food }
             />))}
       </section>
-      <Footer />
+      <Fotter />
     </div>
   );
 }

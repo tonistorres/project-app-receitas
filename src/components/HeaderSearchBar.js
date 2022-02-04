@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import context from '../context/context';
 import { ingredientsSearch, letterSearch, nameSearch } from '../services/fetch';
+import './HeaderSearchBar.css';
 
 export default function HeaderSearchBar() {
   const { searchByFilter, setSearchByFilter } = useContext(context);
@@ -11,7 +12,9 @@ export default function HeaderSearchBar() {
     radioSearch: '',
   });
   const history = useHistory();
-  const { location: { pathname } } = history;
+  const {
+    location: { pathname },
+  } = history;
   const { search, radioSearch } = searchState;
   function handleChange({ target }) {
     const { name } = target;
@@ -86,54 +89,71 @@ export default function HeaderSearchBar() {
   }, [searchByFilter]);
 
   return (
-    <div>
-      <label htmlFor="searchInput">
-        <input
-          id="searchInput"
-          type="text"
-          onChange={ (e) => handleChange(e) }
-          value={ search }
-          name="search"
-          data-testid="search-input"
-        />
-      </label>
-      <label htmlFor="ingredient">
-        ingredient
-        <input
-          onChange={ (e) => handleChange(e) }
-          type="radio"
-          data-testid="ingredient-search-radio"
-          id="ingredient"
-          name="radioSearch"
-        />
-      </label>
-      <label htmlFor="name">
-        name
-        <input
-          onChange={ (e) => handleChange(e) }
-          type="radio"
-          data-testid="name-search-radio"
-          id="name"
-          name="radioSearch"
-        />
-      </label>
-      <label htmlFor="letter">
-        letter
-        <input
-          onChange={ (e) => handleChange(e) }
-          type="radio"
-          data-testid="first-letter-search-radio"
-          id="letter"
-          name="radioSearch"
-        />
-      </label>
-      <button
-        type="button"
-        data-testid="exec-search-btn"
-        onClick={ () => submitRequest() }
-      >
-        Search
-      </button>
+    <div className="container-main-searc">
+      <div className="container-input-search">
+        <label htmlFor="searchInput">
+          <input
+            id="searchInput"
+            type="text"
+            onChange={ (e) => handleChange(e) }
+            value={ search }
+            name="search"
+            data-testid="search-input"
+            className="input-searc-header"
+            placeholder="Search"
+          />
+        </label>
+      </div>
+      <div className="container-radio-horizontal">
+
+        <label htmlFor="ingredient">
+          <div className="containers-radio-vertical">
+            item
+            <input
+              onChange={ (e) => handleChange(e) }
+              type="radio"
+              data-testid="ingredient-search-radio"
+              id="ingredient"
+              name="radioSearch"
+            />
+          </div>
+        </label>
+
+        <label htmlFor="name">
+          <div className="containers-radio-vertical">
+            name
+            <input
+              onChange={ (e) => handleChange(e) }
+              type="radio"
+              data-testid="name-search-radio"
+              id="name"
+              name="radioSearch"
+            />
+          </div>
+        </label>
+
+        <label htmlFor="letter">
+          <div className="containers-radio-vertical">
+            letter
+            <input
+              onChange={ (e) => handleChange(e) }
+              type="radio"
+              data-testid="first-letter-search-radio"
+              id="letter"
+              name="radioSearch"
+            />
+          </div>
+        </label>
+
+        <button
+          type="button"
+          data-testid="exec-search-btn"
+          onClick={ () => submitRequest() }
+          className="btn-search-foods"
+        >
+          Search
+        </button>
+      </div>
     </div>
   );
 }

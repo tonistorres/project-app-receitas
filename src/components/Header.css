@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&family=Roboto+Mono:wght@500&display=swapf') ;
+
+.container-main-header {
+  align-items: center;
+  background:whitesmoke;
+  /* background: #f7c933; */
+  border-radius: 15px;
+  border-bottom: 10px solid #24292F;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  min-height: 190px;
+  width: 100%;
+}
+
+.container-bar-header {
+  align-items: center;
+  background-color: whitesmoke;
+  border-top: 10px solid #24292F;
+  /* border: 3px solid #fd7e14; */
+  border-bottom: 10px solid #fd7e14;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  justify-content: space-around;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+}
+
+.ico-bar-header {
+  background: whitesmoke;
+  border-radius:  25px 0 0 25px;
+  height: 40px;
+  padding:6px 6px;
+  width: 70px;
+
+}
+
+
+.ico-bar-header:hover {
+  background: orange;
+  border-radius: 25px 0 0 25px;
+  height: 40px;
+  padding: 6px 6px;
+  width: 70px;
+
+}
+
+.h1-title-header {
+  color: #343a40;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-top: 5px;
+}
+
+.btn-search-header {
+  border:none;
+  cursor: pointer;
+  height: 40px;
+  width: 70px;
+}
+
+
+@keyframes effectBorder {
+
+  0% {
+    box-shadow: 0 0 5px #777;
+    width: 45px;
+
+  }
+
+  25% {
+    box-shadow: 0 0 80px #ffffbf;
+    width: 45px;
+  }
+
+  50% {
+    box-shadow: 0 0 115px #ffff9e;
+    width: 45px;
+  }
+
+  75% {
+    box-shadow: 0 0 320px #ffff7a;
+    width: 45px;
+  }
+
+  100% {
+    box-shadow: 0 0 425px #ffff00;
+    width: 45px;
+  }
+}

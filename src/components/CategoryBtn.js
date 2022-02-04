@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
 import context from '../context/context';
 import { searchByCategory } from '../services/fetch';
+import './CategoryBtn.css';
 
 export default function CategoryBtn({ category, index, pathname }) {
   const [btnClick, setBtnClick] = useState('');
@@ -27,7 +28,7 @@ export default function CategoryBtn({ category, index, pathname }) {
 
   if (index >= NO_MAGIC_NUMBER) return null;
   return (
-    <div>
+    <div className="container-butons-category-btn">
       <button
         name={ category }
         type="button"

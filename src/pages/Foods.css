@@ -1,0 +1,29 @@
+.container-main-foods {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-buttons-food {
+  background:whitesmoke;
+  /* border: 1px solid #343a40; */
+  display: flex;
+  flex-wrap: wrap;
+  height: 105px;
+  justify-content: space-evenly;
+}
+
+
+.body-food-main {
+  align-items: center;
+  border-bottom: 10px solid #343a40;
+  border-radius: 15px;
+  border-top: 10px solid #fd7e14;
+  display: flex;
+  flex-wrap: wrap;
+  height: 240px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  overflow: auto;
+  width: 320px;
+}

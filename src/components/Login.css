@@ -1,19 +1,74 @@
-/* .loginInput-main {
-    align-items: center;
-    background-image: url("fundoApp01.jpg");
-    border: 5px solid red;
-    display: flex;
-    flex-direction: column;
-    height: 640px;
-    justify-content: center;
-    width: 320px;
+.loginInput-main {
+  align-items: center;
+  background-image: url("../assets/img/fundo4.jpg");
+  /* border: 5px solid red; */
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  justify-content: center;
+  width: 320px;
 }
+
 .login-input-conteudo {
-    border: 2px solid green;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 108px;
-    margin-bottom: 5px;
-    width: 220px;
-}  */
+  align-items: center;
+  /* border: 5px solid green; */
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.inputs-padrao-login {
+  border-radius: 15px;
+  font-size: 15px;
+  height: 6vh;
+  letter-spacing: 4px;
+  text-align: center;
+  width: 97%;
+}
+
+.btns-login-model-1 {
+  background:#f8f9fa;
+  border-radius: 15px;
+  color: #333;
+  font-size: 22px;
+  font-weight: 700;
+  height: 5.5vh;
+  letter-spacing: 6px;
+  margin-bottom: 21px;
+  width: 90%;
+}
+
+.efeitos-autenticacao-app {
+  align-items: center;
+  animation: rotating 1s;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+  justify-content: center;
+  width: 320px;
+}
+
+
+@keyframes rotating {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(60deg);
+  }
+
+  75% {
+    transform: rotate(-60deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+

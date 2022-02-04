@@ -10,16 +10,31 @@ export default function Footer() {
     <div
       data-testid="footer"
       className="container-main-footer"
-      style={ { position: 'fixed', bottom: 0 } }
+      // style={ { position: 'fixed', bottom: 0 } }
     >
       <Link to="/drinks">
-        <img src={ drinkIcon } data-testid="drinks-bottom-btn" alt="explore btn" />
+        <img
+          src={ drinkIcon }
+          data-testid="drinks-bottom-btn"
+          alt="explore btn"
+          className="btn-fotter-style"
+        />
       </Link>
       <Link to="/explore">
-        <img src={ exploreIcon } data-testid="explore-bottom-btn" alt="explore btn" />
+        <img
+          src={ exploreIcon }
+          data-testid="explore-bottom-btn"
+          alt="explore btn"
+          className="btn-fotter-style"
+        />
       </Link>
       <Link to="/foods">
-        <img src={ mealIcon } data-testid="food-bottom-btn" alt="explore btn" />
+        <img
+          src={ mealIcon }
+          data-testid="food-bottom-btn"
+          alt="explore btn"
+          className="btn-fotter-style"
+        />
       </Link>
     </div>);
 }

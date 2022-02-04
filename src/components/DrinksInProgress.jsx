@@ -26,7 +26,7 @@ export default function DrinksInProgress() {
       name: i.strDrink,
       image: i.strDrinkThumb,
       doneDate: Date.now(),
-      tags: i.strTags ? i.strTags : [],
+      tags: i.strTags ? [i.strTags] : [],
     };
     const newArr = [...getLocal, obj];
     localStorage.setItem('doneRecipes', JSON.stringify(newArr));

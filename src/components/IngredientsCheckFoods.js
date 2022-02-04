@@ -59,9 +59,13 @@ export default function IngredientsCheckFoods({ ingredient, measure, index }) {
   }, []);
 
   return (
-    <div style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }>
+    <div>
       <label htmlFor="check" data-testid={ `data-testid=${index}-ingredient-step` }>
-        {`${measure} - ${ingredient}`}
+        <span
+          style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }
+        >
+          {`${measure} - ${ingredient}`}
+        </span>
         <input
           type="checkbox"
           checked={ stateClass !== '' }

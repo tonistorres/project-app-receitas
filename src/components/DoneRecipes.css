@@ -1,0 +1,144 @@
+.container-main-done {
+      /* border: 8px solid violet; */
+  align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  max-height: 640px;
+  width: 320px;
+  
+}
+
+.cotainer-header-done {
+    /* border: 8px solid teal;   */
+  align-items: center;
+  background-color: whitesmoke;
+  /* border: 8px solid blue; */
+  border-bottom: 10px solid #24292f;
+  border-radius: 20px;
+  border-top: 10px solid #fd7e14;
+  display: flex;
+  margin-bottom: 10px;
+  width: 320px;
+}
+
+.cotainer-header-done img {
+
+  background-color: yellowgreen;
+  border-radius: 0 25px 25px;
+  /* border: 5px solid aquamarine; */
+  margin-left: 20px;
+  padding: 5px 15px;
+}
+
+.cotainer-header-done h1 {
+  align-items: center;
+  /* border: 2px solid aquamarine; */
+  color: #343a40;
+  display: flex;
+  font-family: " Architects Daughter ", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 5px;
+  margin-top: 5px;
+  width: 260px;
+}
+
+.container-buttons-done {
+    
+  align-items: center;
+  /* border: 8px solid red; */
+  display: flex;
+  height: 6vh;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-buttons-done button {
+    
+  background-color: #c3ce6a;
+  border-radius: 0 25px 25px;
+  color: #343a40;
+  font-family: " Architects Daughter", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  height: 4vh;
+  letter-spacing: 2px;
+  width: 100px;
+}
+
+.container-buttons-done button:hover {
+  background-color: #0c9420;
+  border-radius: 0 25px 25px;
+  color: whitesmoke;
+  font-family: " Architects Daughter", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  height: 4vh;
+  letter-spacing: 2px;
+  width: 100px;
+}
+
+.container-body-important {
+  border: 9px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 387px;
+  overflow: auto;
+  
+}
+
+.container-conteudo-body {
+  align-items: center;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 175px;
+  width: 100%;
+}
+
+.container-img-body {
+  border: 5px solid orange;
+  display: flex;
+  flex-direction: row;
+  height: 12vh;
+  width: 47%;
+}
+.container-img-body img {
+  height: 100px;
+  width: 100px;
+}
+
+.container-info-body {
+  border: 2px solid greenyellow;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 12vh;
+  width: 52%;
+}
+
+.containder-info-body #nationality {
+  align-items: center;
+  /* border: 5px solid red; */
+  font-size: 12px;
+  display: flex;
+  height: 4vh;
+  margin-top: 15px;
+  width: 70%;
+}
+
+/* trabalhando esse container  */
+.container-info-body-horizontal {
+  align-items: center;
+  /* border: 5px solid blue; */
+  display: flex;
+  flex-direction: row;
+  height: 6vh;
+  justify-content: space-around;
+  width: 96%;
+}

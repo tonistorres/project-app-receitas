@@ -86,12 +86,14 @@ export default function FavoriteRecipes() {
                   <p data-testid={ `${index}-horizontal-name` }>{i.name}</p>
                 </Link>
                 <div>
-                  <input
+                  <button
                     type="button"
                     onClick={ () => removeLocal(i.id) }
                     data-testid={ `${index}-horizontal-favorite-btn` }
                     src={ blackHeartIcon }
-                  />
+                  >
+                    <img src={ blackHeartIcon } alt="blackhearticon" />
+                  </button>
                   <ShareBtnDone
                     index={ index }
                     local={ i.type.includes('food') ? 'foods' : 'drinks' }
