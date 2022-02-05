@@ -1,24 +1,14 @@
 .container-butons-category-btn {
   align-items: center;
+  /* background: #c3ce6a; */
   display: flex;
   height: 5vh;
   width: 100px;
 }
 
 .container-butons-category-btn button {
-  background: #24292f;
-  border-radius: 8px;
-  color: whitesmoke;
-  font-size: 16px;
-  font-weight: 700;
-  height: 4.5vh;
-  letter-spacing: 1px;
-  width: 100px;
-}
-
-.container-butons-category-btn button:hover {
-  background: #fd7e14;
-  border-radius: 8px;
+  /* background: #c3ce6a; */
+  border-radius: 0 25px 25px;
   color: #24292f;
   font-size: 16px;
   font-weight: 700;
@@ -27,10 +17,22 @@
   width: 100px;
 }
 
+.container-butons-category-btn button:hover {
+  animation: rotating 1s;
+  background-color: #009500;
+  border-radius: 0 25px 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 4.5vh;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
 .btn-all-category {
-  background: #24292f;
-  border-radius: 8px;
-  color: whitesmoke;
+  /* background: #c3ce6a; */
+  border-radius: 0 25px 25px;
+  color: #24292f;
   font-size: 16px;
   font-weight: 700;
   height: 4.5vh;
@@ -40,12 +42,26 @@
 
 
 .btn-all-category:hover {
-  background: #fd7e14;
-  border-radius: 8px;
-  color: #24292f;
+  animation: rotating 1s;
+  background-color: #009500;
+  border-radius: 0 25px 25px;
+  color: white;
   font-size: 16px;
   font-weight: 700;
   height: 4.5vh;
   letter-spacing: 3px;
   width: 100px;
 }
+
+
+@keyframes rotating {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-10deg);
+  }
+}
+

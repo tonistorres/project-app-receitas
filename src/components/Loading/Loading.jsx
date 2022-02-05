@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../index.css';
 import './LoadingStyle.css';
-import img from '../../assets/img/load1.gif';
+import img from '../../assets/img/loading.gif';
 
 function Loading() {
   return (

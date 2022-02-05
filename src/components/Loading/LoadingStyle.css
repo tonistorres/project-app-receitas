@@ -2,12 +2,15 @@
 
 .main-loading {
   align-items: center;
-  background-image: url('../../assets/img/fundoLoading.jpg');
-  border: 2px solid #E0B97B;
+  background-image: url("../../assets/img/folhafundo.png");
+  border: 3px solid #333;
+  border-radius: 1px 195px 0;
   display: flex;
   flex-direction: column;
   height: 640px;
   justify-content: space-around;
+  margin-left: 10px;
+  margin-top: 10px;
   width: 320px;
 }
 
@@ -24,14 +27,15 @@
 .img-loading {
   /* border: 2px solid yellow; */
   height: 250px;
+  border-radius: 1px 115px 0;
   /* margin-top: 100px; */
-  width: 100%;
+  width: 250px;
 }
 
 .effect-css-moviment-1 {
   align-items: center;
   /* border: 2px solid greenyellow; */
-  color: #540909;
+  /* color: #323232; */
   display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 68px;
@@ -44,7 +48,7 @@
 .effect-css-moviment-2 {
   align-items: center;
   /* border: 2px solid red; */
-  color: #540909;
+  color: #323232;
   display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 58px;

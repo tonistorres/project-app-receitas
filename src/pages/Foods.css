@@ -15,9 +15,7 @@
 
 .body-food-main {
   align-items: center;
-  border-bottom: 10px solid #343a40;
-  border-radius: 15px;
-  border-top: 10px solid #fd7e14;
+  border-radius: 1px 45px 0;
   display: flex;
   flex-wrap: wrap;
   height: 240px;

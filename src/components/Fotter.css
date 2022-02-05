@@ -1,14 +1,18 @@
 .container-main-footer {
-  border-bottom: 10px solid #24292F;
+  align-items: center;
+  /* border-bottom: 10px solid #24292f; */
   border-radius: 15px;
   display: flex;
   height: 70px;
   justify-content: space-evenly;
+  margin-top: 20px;
+  padding-bottom: 10px;
   width: 100%;
 }
 
 .btn-fotter-style {
-  background:#c3ce6a;
+  background:white;
+  border: 1px solid #333;
   border-radius: 35px 25px 55px 1px;
   color:whitesmoke;
   /* filter: brightness(1) sepia(5) saturate(5) hue-rotate(80deg); */
@@ -16,14 +20,14 @@
 }
 
 .btn-fotter-style:hover {
-  animation: rotating 6s;
+  animation: rotatingfotter 6s;
   background:yellowgreen;
   border-radius: 35px 25px 55px 1px;
   color:whitesmoke;
   padding: 8px 8px;
 }
 
-@keyframes rotating {
+@keyframes rotatingfotter {
 
   from {
     transform: rotate(0deg);

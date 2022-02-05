@@ -68,11 +68,14 @@ export default function DoneRecipes() {
           Drink
         </button>
       </section>
+
       <div className="container-body-important">
         {elementsFilter && elementsFilter.map((i, index) => (
+
           <div key={ index } className="container-conteudo-body">
 
             <div className="container-img-body">
+
               <Link
                 to={ convertLink(i.type, i.id) }
               >
@@ -83,11 +86,15 @@ export default function DoneRecipes() {
                   data-testid={ `${index}-horizontal-image` }
                   alt={ i.name }
                 />
+
               </Link>
+
             </div>
 
             <div className="container-info-body">
+
               <div className="container-info-body-horizontal">
+
                 <p data-testid={ `${index}-horizontal-top-text` } id="nationality">
                   {i.nationality !== ''
                     ? `${i.nationality} - ${i.category}` : i.alcoholicOrNot }
@@ -99,13 +106,16 @@ export default function DoneRecipes() {
                   id={ i.id }
                 />
               </div>
+            </div>
+
+            {/* <p data-testid={ `${index}-horizontal-done-date` }>
+              {i.doneDate}
+            </p> */}
+            <div className="container-info-body-horizontal-two">
               <Link to={ convertLink(i.type, i.id) }>
                 <p data-testid={ `${index}-horizontal-name` }>{i.name}</p>
               </Link>
 
-              {/* <p data-testid={ `${index}-horizontal-done-date` }>
-              {i.doneDate}
-            </p> */}
               { i.tags && i.tags.map((item) => (
                 <p
                   key={ index }
@@ -114,6 +124,7 @@ export default function DoneRecipes() {
                   {item}
                 </p>))}
             </div>
+
           </div>
 
         ))}

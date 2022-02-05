@@ -1,24 +1,28 @@
 .container-main-profile {
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #009500;
   display: flex;
+  border-radius: 1px 175px 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  max-height: 640px;
   flex-direction: column;
+  width: 320px;
 }
 
 .cotainer-header-profile {
   align-items: center;
-  background-color: whitesmoke;
-  /* border: 8px solid blue; */
-  border-bottom: 10px solid #24292f;
+  background-color: #009500;
+  border-bottom: 10px solid white;
   border-radius: 20px;
-  border-top: 10px solid #fd7e14;
+  /* border-top: 10px solid #fd7e14; */
   display: flex;
   margin-bottom: 10px;
   width: 320px;
 }
 
 .cotainer-header-profile img {
-  background-color: yellowgreen;
+  background-color: white;
   border-radius: 0 25px 25px ;
  /* border: 5px solid aquamarine; */
   margin-left: 20px;
@@ -26,7 +30,7 @@
 }
 
 .cotainer-header-profile img:hover {
-  background-color: #fd7e14;
+  background-color:  #c3ce6a;
   border-radius: 0 25px 25px;
   margin-left: 20px;
   padding: 5px 15px;
@@ -34,8 +38,7 @@
 
 .cotainer-header-profile h1 {
   align-items: center;
-  /* border: 2px solid aquamarine; */
-  color: #343a40;
+  color: white;
   display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 35px;
@@ -48,21 +51,25 @@
 }
 
 .conteiner-body-profeile p {
-  background-color: #9e8606;
-  /* border: 2px solid greenyellow; */
+  align-items: center;
+  background-color:yellowgreen;
+  border: 2px solid #333;
   border-radius: 0 25px 25px;
-  color: whitesmoke;
+  color: black;
+  display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 2px;
+  justify-content: center;
+  letter-spacing: 1px;
   padding: 15px 15px 15px 15px;
+  width: 95%;
 }
 
 
 .conteiner-body-profeile p:hover {
+  animation: rotating 2s;
   background-color: #c3ce6a;
-  /* border: 2px solid greenyellow; */
   border-radius: 0 25px 25px;
   color: #343a40;
   font-family: ' Architects Daughter' , cursive;
@@ -73,9 +80,13 @@
 }
   
 .container-conteudo-profile {
-  /* border: 2px solid greenyellow; */
+  align-items: center;
+  background-color: #c3ce6a;
+  border: 4px solid white;
+  border-radius: 1px 175px 0;
   display: flex;
-  min-height: 506px;
+  /* justify-content: space-around; */
+  min-height: 412px;
 }
 
 .conteiner-body-profeile {
@@ -99,13 +110,65 @@
 }
 
 .conteiner-body-profeile button:hover {
-    background-color: #0C9420;
-    border-radius: 0 25px 25px;
-    color: whitesmoke;
-    font-family: ' Architects Daughter' , cursive;
-    font-size: 25px;
-    font-weight: 700;
-    height: 6vh;
-    width: 200px;
+  animation: rotating 2s;
+  background-color: #c3ce6a;
+  border-radius: 0 25px 25px;
+  color: #333;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 25px;
+  font-weight: 700;
+  height: 6vh;
+  width: 200px;
   }
   
+  @keyframes rotating {
+
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    25% {
+      transform: rotate(10deg);
+    }
+
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+
+
+
+
+@keyframes effectlight {
+
+  0% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+  }
+
+  25% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+  }
+
+  50% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px #777;
+    left: 20px;
+    width: 50px;
+  }
+
+  75% {
+    border-radius: 50%;
+    box-shadow: 0 0 25px wheat;
+  }
+
+  100% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellowgreen;
+  }
+}

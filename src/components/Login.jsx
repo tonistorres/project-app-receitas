@@ -56,6 +56,7 @@ function Login() {
 
   return (
     <div className="loginInput-main">
+      <h1> App de Receitas</h1>
       <div className="efeitos-autenticacao-app">
         <div className="login-input-conteudo">
           <input

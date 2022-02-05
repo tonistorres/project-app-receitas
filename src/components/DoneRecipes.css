@@ -1,43 +1,48 @@
+/* ***********ESCOPO PRINCIPAL**************** */
 .container-main-done {
-      /* border: 8px solid violet; */
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #009500;
+  border-radius: 1px 175px 0;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+  margin-top: 10px;
   max-height: 640px;
   width: 320px;
-  
 }
-
+/* ***********HEADER INICIO**************** */
 .cotainer-header-done {
-    /* border: 8px solid teal;   */
   align-items: center;
-  background-color: whitesmoke;
-  /* border: 8px solid blue; */
-  border-bottom: 10px solid #24292f;
-  border-radius: 20px;
-  border-top: 10px solid #fd7e14;
+  background-color: #009500;
+  border-bottom: 10px solid white;
+  border-radius: 1px 175px 0;
   display: flex;
+  height: 22vh;
   margin-bottom: 10px;
   width: 320px;
 }
 
 .cotainer-header-done img {
+  background-color: white;
+  border-radius: 0 25px 25px;
+  margin-left: 20px;
+  padding: 5px 15px;
+}
 
+.cotainer-header-done img:hover {
+  animation: effectlight 2s;
   background-color: yellowgreen;
   border-radius: 0 25px 25px;
-  /* border: 5px solid aquamarine; */
   margin-left: 20px;
   padding: 5px 15px;
 }
 
 .cotainer-header-done h1 {
   align-items: center;
-  /* border: 2px solid aquamarine; */
-  color: #343a40;
+  color: white;
   display: flex;
-  font-family: " Architects Daughter ", cursive;
-  font-size: 30px;
+  font-family: ' Architects Daughter ' , cursive;
+  font-size: 25px;
   font-weight: 700;
   justify-content: center;
   letter-spacing: 5px;
@@ -45,21 +50,21 @@
   width: 260px;
 }
 
+/* **************HEADER FIM ************* */
+
+/* **************INICIO BUTTONS************* */
 .container-buttons-done {
-    
   align-items: center;
-  /* border: 8px solid red; */
+  background-color: white;
   display: flex;
-  height: 6vh;
+  min-height: 7vh;
   justify-content: space-around;
-  margin-bottom: 10px;
   width: 100%;
 }
 
 .container-buttons-done button {
-    
-  background-color: #c3ce6a;
-  border-radius: 0 25px 25px;
+  animation: rotating 1s;
+  border-radius: 0 125px 25px;
   color: #343a40;
   font-family: " Architects Daughter", cursive;
   font-size: 20px;
@@ -70,10 +75,11 @@
 }
 
 .container-buttons-done button:hover {
-  background-color: #0c9420;
+  background-color: #009500;
+  border: 3px solid white;
   border-radius: 0 25px 25px;
-  color: whitesmoke;
-  font-family: " Architects Daughter", cursive;
+  color: white;
+  font-family: ' Architects Daughter', cursive;
   font-size: 20px;
   font-weight: 700;
   height: 4vh;
@@ -81,53 +87,87 @@
   width: 100px;
 }
 
+/* **************FIM BUTTONS************* */
+
+/******* INICIO CORPO BARRA SCROLL******** */
 .container-body-important {
-  border: 9px solid black;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  min-height: 387px;
-  overflow: auto;
-  
+  min-height: 370px;
+  overflow-y: scroll;
+  width: 320px;
 }
 
 .container-conteudo-body {
   align-items: center;
-  /* border: 1px solid blue; */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-height: 175px;
-  width: 100%;
+  min-width: 280px;
 }
 
 .container-img-body {
-  border: 5px solid orange;
+  align-items: center;
+  background-color:white;
+  border: 1px solid #343a40;
+  border-radius: 1px 125px 0;
   display: flex;
   flex-direction: row;
-  height: 12vh;
-  width: 47%;
+  height: 13vh;
+  justify-content: center;
+  width: 97%;
 }
+
+/**** OLHO PARTE INTERNA ***/
 .container-img-body img {
-  height: 100px;
-  width: 100px;
+  animation: effectlight 4s;
+  border: 8px solid #009500;
+  border-radius: 1px 125px 0;
+  height: 110px;
+  width: 180px;
+}
+
+.container-img-body:hover {
+  align-items: center;
+  animation: rotating 1s;
+  display: flex;
+  flex-direction: row;
+  height: 13vh;
+  justify-content: center;
+  width: 97%;
 }
 
 .container-info-body {
-  border: 2px solid greenyellow;
+  /* border: 1px solid yellow; */
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  height: 12vh;
-  width: 52%;
 }
 
-.containder-info-body #nationality {
+.container-info-body #nationality {
   align-items: center;
-  /* border: 5px solid red; */
-  font-size: 12px;
+  /* border: 0.5px solid #343a40; */
+  border-radius: 1px 25px 0;
   display: flex;
-  height: 4vh;
+  flex-wrap: nowrap;
+  font-size: 15px;
+  font-weight: 700;
+  height: 18px;
+  justify-content: center;
+  margin-top: 15px;
+  width: 70%;
+}
+
+.container-info-body #nationality:hover {
+  align-items: center;
+  background-color: green;
+  border: 3px solid white;
+  border-radius: 1px 25px 0;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 20px;
+  font-weight: 700;
+  height: 6vh;
+  justify-content: center;
   margin-top: 15px;
   width: 70%;
 }
@@ -135,10 +175,228 @@
 /* trabalhando esse container  */
 .container-info-body-horizontal {
   align-items: center;
-  /* border: 5px solid blue; */
+  /* border: 5px solid red; */
+  border-radius: 1px 15px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* height: 6vh; */
+  justify-content: space-around;
+  min-width: 280px;
+}
+
+.container-info-body-horizontal-two {
+  align-items: center;
+  /* background-color: white; */
+  /* border: 5px solid red; */
+  border-radius: 1px 15px 0;
+  color: #343a40;
+  display: flex;
+  flex-direction: column;
+  height: 12vh;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.container-info-body-horizontal-two p {
+  align-items: center;
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 1px 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 18px;
+  font-weight: 700;
+  height: 5.5vh;
+  justify-content: center;
+  padding: 5px 5px;
+  width: 100%;
+}
+
+
+.container-info-body-horizontal-two p:hover {
+  align-items: center;
+  border: 2px solid #333;
+  background-color: green;
+  border-radius: 1px 15px 0;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: ' Architects Daughter' , cursive;
+  font-size: 18px;
+  font-weight: 700;
+  height: 5.5vh;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.container-info-body-horizontal-two button {
+  background-color: white;
+  border-radius: 1px 15px 0;
+}
+
+.container-info-body-horizontal-two button:hover {
+    animation: effectlight 2s;
+    background-color: white;
+    border-radius: 1px 15px 0;
+  }
+
+
+
+/******* INICIO CORPO BARRA SCROLL******** */
+
+.container-body-important {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  /* margin-top: 10px; */
+  height: 370px;
+  margin-right: 2px;
+  /* margin-bottom: 20px; */
+  /* overflow-x: scroll; */
+  width: 320px;
+}
+
+.container-conteudo-body {
+  align-items: center;
+  background-color: #c3ce6a;
+  border: 6px solid #343a40;
+  border-radius: 1px 125px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 12px;
+  min-height: 360px;
+  padding-top: 10px;
+  width: 300px;
+}
+
+.container-img-body {
+  align-items: center;
+  background-color:white;
+  border: 1px solid #343a40;
+  border-radius: 1px 125px 0;
   display: flex;
   flex-direction: row;
-  height: 6vh;
-  justify-content: space-around;
+  height: 13vh;
+  justify-content: center;
+  width: 97%;
+}
+
+/**** OLHO PARTE INTERNA ***/
+.img-main-favorites {
+  animation: effectlight 4s;
+  border: 8px solid #009500;
+  border-radius: 1px 125px 0;
+  height: 110px;
+  width: 180px;
+}
+
+.img-main-favorites:hover {
+  align-items: center;
+  animation: rotating 1s;
+  display: flex;
+  flex-direction: row;
+  height: 13vh;
+  justify-content: center;
+  width: 97%;
+  }
+
+
+.container-info-body {
+  border-radius: 1px 175px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 12vh;
   width: 96%;
+}
+
+.container-info-body #nationality {
+  align-items: center;
+  background-color: white;
+  border: 0.5px solid #343a40;
+  border-radius: 1px 25px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 15px;
+  font-weight: 700;
+  height: 6vh;
+  justify-content: center;
+  margin-top: 15px;
+  width: 70%;
+}
+
+.container-info-body #nationality:hover {
+  align-items: center;
+  background-color: green;
+  border: 3px solid white;
+  border-radius: 1px 25px 0;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 20px;
+  font-weight: 700;
+  height: 6vh;
+  justify-content: center;
+  margin-top: 15px;
+  width: 70%;
+}
+
+/* trabalhando esse container  */
+.container-info-body-horizontal {
+  align-items: center;
+  border-radius: 1px 15px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 9vh;
+  justify-content: space-around;
+  margin-top: 5px;
+  width: 94%;
+  }
+
+@keyframes rotating {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+
+@keyframes effectlight {
+
+  0% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+  }
+
+  25% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+  }
+
+  50% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px #777;
+    left: 20px;
+    width: 50px;
+  }
+
+  75% {
+    border-radius: 50%;
+    box-shadow: 0 0 25px wheat;
+  }
+
+  100% {
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellowgreen;
+  }
 }

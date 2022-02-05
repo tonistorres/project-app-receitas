@@ -1,11 +1,17 @@
 .loginInput-main {
   align-items: center;
-  background-image: url("../assets/img/fundo4.jpg");
+  /* background-color: #c3ce6a; */
+  border: 3px solid #333;
+  border-radius: 1px 175px 0;
+
+  background-image: url("../assets/img/folhafundo.png");
   /* border: 5px solid red; */
   display: flex;
   flex-direction: column;
   height: 640px;
   justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
   width: 320px;
 }
 

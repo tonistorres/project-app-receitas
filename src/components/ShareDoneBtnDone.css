@@ -3,27 +3,48 @@
   /* border: 1px solid red; */
   border: none;
   height: 60px;
-  widsth: 60px;
+  width: 60px;
 }
 
 .container-main-share-btn-done img {
-  height: 20px;
-  width: 17px;
+  height: 28px;
+  width: 18px;
+}
+
+.container-main-share-btn-done img:hover {
+  height: 38px;
+  width: 28px;
 }
 
 .container-main-share-btn-done button {
-    background-color: #c3ce6a;
-    border-radius: 0 35px 35px;
-    box-shadow: none;
-    padding: none;
-    margin: none;
+  background-color: white;
+  border-radius: 0 35px 35px;
+  margin: none;
+  padding: none;
 }
 
-
 .container-main-share-btn-done button:hover {
-    background-color: orange;
-    border-radius: 0 35px 35px;
-    box-shadow: none;
-    padding: none;
-    margin: none;
+  animation: rotating 6s;
+  background-color: yellowgreen;
+  border-radius: 0 35px 35px;
+  box-shadow: none;
+  margin: none;
+  padding: none;
+}
+
+.container-main-share-btn-done p {
+  color: #343a40;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@keyframes rotating {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

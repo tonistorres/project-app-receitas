@@ -21,7 +21,7 @@ export default function ShareBtnDone({ local, id, index }) {
       >
         <img src={ shareIcon } alt="share" />
       </button>
-      {copy && <p>Link copied!</p>}
+      {copy && <p>copied!</p>}
     </div>);
 }
 

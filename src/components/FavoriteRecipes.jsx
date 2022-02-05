@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import profileIcon from '../images/profileIcon.svg';
 import ShareBtnDone from './ShareBtnDone';
+import './Favorites.css';
+import Footer from './Footer';
 
 export default function FavoriteRecipes() {
   const [filter, setFilter] = useState('All');
@@ -39,12 +41,20 @@ export default function FavoriteRecipes() {
   };
 
   return (
-    <div>
-      <section>
-        <h1 data-testid="page-title">Favorite Recipes</h1>
+    <main className="container-main-favorites">
+
+      <header className="cotainer-header-favorites">
         <Link to="/profile">
-          <img src={ profileIcon } data-testid="profile-top-btn" alt="profile Icon" />
+          <img
+            src={ profileIcon }
+            data-testid="profile-top-btn"
+            alt="profile Icon"
+          />
         </Link>
+        <h1 data-testid="page-title">Favorites</h1>
+      </header>
+
+      <section className="container-buttons-favorites">
         <button
           type="button"
           onClick={ () => setFilter('All') }
@@ -66,45 +76,67 @@ export default function FavoriteRecipes() {
         >
           Drink
         </button>
-        <section>
-          {elementsFilter && elementsFilter.map((i, index) => (
-            <div key={ index }>
-              <Link to={ convertLink(i.type, i.id) }>
+      </section>
+
+      <div className="container-body-important-favorites">
+        {elementsFilter && elementsFilter.map((i, index) => (
+
+          <div key={ index } className="container-conteudo-body-favorites">
+
+            <div className="container-img-body-favorites">
+
+              <Link
+                to={ convertLink(i.type, i.id) }
+              >
+
                 <img
                   src={ i.image }
-                  style={ { width: 30 } }
                   data-testid={ `${index}-horizontal-image` }
                   alt={ i.name }
+                  className="img-main-favorites"
                 />
+
               </Link>
-              <div>
-                <p data-testid={ `${index}-horizontal-top-text` }>
+
+            </div>
+
+            <div className="container-info-body-favorites">
+
+              <div className="container-info-body-horizontal-favorites">
+
+                <p data-testid={ `${index}-horizontal-top-text` } id="nationality">
                   {i.nationality !== ''
                     ? `${i.nationality} - ${i.category}` : i.alcoholicOrNot }
                 </p>
+
+                <ShareBtnDone
+                  index={ index }
+                  local={ i.type.includes('food') ? 'foods' : 'drinks' }
+                  id={ i.id }
+                />
+              </div>
+              <section className="container-info-body-horizontal-two-favorites">
                 <Link to={ convertLink(i.type, i.id) }>
                   <p data-testid={ `${index}-horizontal-name` }>{i.name}</p>
                 </Link>
-                <div>
-                  <button
-                    type="button"
-                    onClick={ () => removeLocal(i.id) }
-                    data-testid={ `${index}-horizontal-favorite-btn` }
-                    src={ blackHeartIcon }
-                  >
-                    <img src={ blackHeartIcon } alt="blackhearticon" />
-                  </button>
-                  <ShareBtnDone
-                    index={ index }
-                    local={ i.type.includes('food') ? 'foods' : 'drinks' }
-                    id={ i.id }
-                  />
-                </div>
-              </div>
+
+                <button
+                  type="button"
+                  onClick={ () => removeLocal(i.id) }
+                  data-testid={ `${index}-horizontal-favorite-btn` }
+                  src={ blackHeartIcon }
+                >
+                  <img src={ blackHeartIcon } alt="blackhearticon" />
+
+                </button>
+              </section>
+
             </div>
-          ))}
-        </section>
-      </section>
-    </div>
+
+          </div> // FIM container-conteudo-body
+        ))}
+      </div>
+      <Footer />
+    </main>
   );
 }
