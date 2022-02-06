@@ -1,6 +1,4 @@
 .container-main-share-btn-done {
-  /* background-color: rebeccapurple; */
-  /* border: 1px solid red; */
   border: none;
   height: 60px;
   width: 60px;
@@ -25,7 +23,7 @@
 
 .container-main-share-btn-done button:hover {
   animation: rotating 6s;
-  background-color: yellowgreen;
+  background-color: #8bac5b;
   border-radius: 0 35px 35px;
   box-shadow: none;
   margin: none;

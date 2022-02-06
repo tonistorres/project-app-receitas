@@ -1,0 +1,188 @@
+.container-main-foods-id {
+  background-color: #009500;
+  border: 8px solid #8bac5b;
+  border-radius: 1px 115px 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.container-conteudo-foods-id {
+  display: flex;
+  flex-direction: column;
+  max-height: 640px;
+  max-width: 320px;
+}
+
+#img-cardapio {
+  border: 12px solid #8bac5b;
+  border-radius: 1px 115px 0;
+  height: 180px;
+  width: 255px;
+}
+
+#img-cardapio:hover {
+  animation: amplia 2s forwards ease-in-out;
+  border: 12px solid #c3ce6a;
+  border-radius: 1px 115px 0;
+  height: 180px;
+  width: 255px;
+}
+
+.container-barra-foods-id {
+  align-items: center;
+  background-color: #c3ce6a;
+  border-radius: 115px 145px 75px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 9px 9px;
+}
+
+.container-barra-foods-id:hover {
+  background-color: whitesmoke;
+}
+
+.container-barra-foods-id h1 {
+  color: #333;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.container-barra-interna-foods-id {
+  align-items: center;
+  background-color: #8bac5b;
+  border-radius: 0 25px 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 6px;
+  width: 150px;
+}
+
+#categoria-receitas {
+  background-color: #8bac5b;
+  border-radius: 0 25px 0;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 5px;
+  margin-left: 10px;
+  width: 50%;
+}
+
+.scroll-body-id-foods {
+  border-radius: 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  overflow-y: scroll;
+  width: 310px;
+}
+
+.scroll-container-instructions {
+  align-items: center;
+  background-color: #8bac5b;
+  border-radius: 1px 35px 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  height: auto;
+  justify-content: start;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 5px 5px 5px 5px;
+  width: 287px;
+}
+
+.scroll-container-instructions h1 {
+  background-color: #c3ce6a;
+  border-radius: 1px 45px 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding-left: 20px;
+  padding: 9px 9px;
+  width: 70%;
+}
+
+.scroll-container-instructions h1:hover {
+  background-color: white;
+}
+
+#video-instruction-h1 {
+  align-items: center;
+  background-color: #c3ce6a;
+  border-radius: 1px 115px 0;
+  display: flex;
+  font-size: 22px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 5px 5px;
+  width: 250px;
+}
+
+
+#video-instruction-h1:hover {
+  background-color: white;
+}
+
+#youtbe-video {
+  align-items: center;
+  border: 8px solid #8bac5b;
+  border-radius: 1px 75px 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  padding: 5px 5px 5px 5px;
+  width: 250px;
+}
+
+#youtbe-video:hover {
+  animation: amplia 2s forwards ease-in-out;
+}
+
+@keyframes amplia {
+  0% {
+    border: 8px solid #8bac5b;
+    border-radius: 1px 115px 0;
+    height: 180px;
+    width: 255px;
+  }
+
+  25% {
+    border: 8px solid #8bac5b;
+    border-radius: 1px 115px 0;
+    height: 180px;
+    width: 255px;
+  }
+
+  75% {
+    border: 12px solid white;
+    border-radius: 50%;
+    height: 210px;
+    width: 210px;
+  }
+
+  100% {
+    border: 12px solid #8bac5b;
+    border-radius: 1px 115px 0;
+    height: 180px;
+    width: 255px;
+  }
+}

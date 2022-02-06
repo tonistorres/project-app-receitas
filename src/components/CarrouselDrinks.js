@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { nameSearch } from '../services/fetch';
-import './Carrousel.css';
+import './CarrouselFoods.css';
 
 export default function CarrouselDrinks() {
   const [carrousel, setCarrousel] = useState([]);

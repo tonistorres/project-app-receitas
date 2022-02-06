@@ -1,0 +1,32 @@
+.container-main-ingredients {
+  align-items: center;
+  background-color: #c3ce6a;
+  border-radius: 1px 35px 0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: start;
+  width: 294px;
+}
+
+.container-main-ingredients h1 {
+  background-color: #8bac5b;
+  border-radius: 1px 45px 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding: 9px 9px;
+  padding-left: 20px;
+  width: 70%;
+}
+
+.container-main-ingredients h1:hover {
+  background-color: white;
+  border-radius: 1px 45px 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding: 9px 9px;
+  padding-left: 20px;
+  width: 70%;
+}

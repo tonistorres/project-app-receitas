@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import shareIcon from '../images/shareIcon.svg';
+import './ShareBtn.css';
 
 // copiar para clipboard = https://www.npmjs.com/package/clipboard-copy
 export default function ShareBtn({ type, id }) {
@@ -24,7 +25,7 @@ export default function ShareBtn({ type, id }) {
     }
   };
   return (
-    <div>
+    <div className="container-main-share-btn">
       <button
         data-testid="share-btn"
         type="button"

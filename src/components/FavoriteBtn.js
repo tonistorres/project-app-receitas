@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
+import './FavoritesBtn.css';
 
 const createNewObj = (local, item, id) => {
   if (local === 'foods') {
@@ -63,14 +64,17 @@ export default function FavoriteBtn({ item, local }) {
   }, []);
 
   return (
-    <div>
+    <div className="container-favorites-btn-img">
       <button
         data-testid="favorite-btn"
         type="button"
         onClick={ () => handleClick() }
         src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
       >
-        <img src={ isFavorite ? blackHeartIcon : whiteHeartIcon } alt="favorite Btn" />
+        <img
+          src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
+          alt="favorite Btn"
+        />
       </button>
     </div>
   );

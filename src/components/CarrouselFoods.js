@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Carrousel.css';
+import './CarrouselFoods.css';
 
 export default function CarrouselFoods() {
   const [carrousel, setCarrousel] = useState([]);

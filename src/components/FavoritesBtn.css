@@ -1,0 +1,12 @@
+.container-favorites-btn-img button {
+  border: none;
+  border-radius: 0 55px 45px;
+  outline: none;
+}
+
+.container-favorites-btn-img img {
+  background-color: #c3ce6a;
+  border-radius: 0 55px 45px;
+  border: none;
+  padding: 8px 12px;
+}

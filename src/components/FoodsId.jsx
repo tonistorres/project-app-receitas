@@ -4,6 +4,8 @@ import CarrouselFoods from './CarrouselFoods';
 import FavoriteBtn from './FavoriteBtn';
 import IngredientsAndMeasures from './IngredientsAndMeasures';
 import ShareBtn from './ShareBtn';
+import './FoodsId.css';
+import Footer from './Footer';
 
 export default function FoodsId() {
   const { id } = useParams();
@@ -57,30 +59,71 @@ export default function FoodsId() {
   }, []);
 
   return (
-    <div>
+    <div className="container-main-foods-id">
+
       {foodsInProgress.map((i, index) => (
-        <div key={ index }>
-          <img src={ i.strMealThumb } alt={ i.strMeal } data-testid="recipe-photo" />
-          <h1 data-testid="recipe-title">{i.strMeal}</h1>
-          <p data-testid="recipe-category">{i.strCategory}</p>
-          <ShareBtn />
-          <FavoriteBtn item={ i } local="foods" />
-          <IngredientsAndMeasures item={ i } />
-          <p data-testid="instructions">{i.strInstructions}</p>
-          {i.strYoutube && (
-            <embed data-testid="video" src={ convertUrl(i.strYoutube) } />)}
-          <CarrouselFoods />
-          {!done && (
-            <button
-              data-testid="start-recipe-btn"
-              onClick={ () => history.push(`/foods/${id}/in-progress`) }
-              style={ { position: 'fixed', bottom: 0 } }
-              type="button"
+
+        <div key={ index } className="container-conteudo-foods-id">
+          <img
+            src={ i.strMealThumb }
+            alt={ i.strMeal }
+            data-testid="recipe-photo"
+            id="img-cardapio"
+          />
+
+          <div className="container-barra-foods-id">
+
+            <h1
+              data-testid="recipe-title"
             >
-              {!init ? 'Start Recipe' : 'Continue Recipe' }
-            </button>)}
+              {i.strMeal}
+            </h1>
+
+            <div className="container-barra-interna-foods-id">
+
+              <ShareBtn />
+
+              <FavoriteBtn
+                item={ i }
+                local="foods"
+              />
+
+            </div>
+          </div>
+
+          <p data-testid="recipe-category" id="categoria-receitas">{i.strCategory}</p>
+          <div className="scroll-body-id-foods">
+
+            <IngredientsAndMeasures
+              item={ i }
+            />
+            <div className="scroll-container-instructions">
+              <h1>Instructions:</h1>
+              <p data-testid="instructions">{i.strInstructions}</p>
+            </div>
+            <h1 id="video-instruction-h1">Vídeo Instruction:</h1>
+            {i.strYoutube && (
+              <embed
+                data-testid="video"
+                src={ convertUrl(i.strYoutube) }
+                id="youtbe-video"
+              />)}
+
+            <CarrouselFoods />
+
+            {!done && (
+              <button
+                data-testid="start-recipe-btn"
+                onClick={ () => history.push(`/foods/${id}/in-progress`) }
+                style={ { position: 'fixed', bottom: 0 } }
+                type="button"
+              >
+                {!init ? 'Start Recipe' : 'Continue Recipe' }
+              </button>)}
+          </div>
         </div>
       ))}
+      <Footer />
     </div>
   );
 }

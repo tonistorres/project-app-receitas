@@ -52,10 +52,10 @@
 
 .conteiner-body-profeile p {
   align-items: center;
-  background-color:yellowgreen;
-  border: 2px solid #333;
+  background-color:white;
+  /* border: 2px solid #333; */
   border-radius: 0 25px 25px;
-  color: black;
+  color: green;
   display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
@@ -69,9 +69,9 @@
 
 .conteiner-body-profeile p:hover {
   animation: rotating 2s;
-  background-color: #c3ce6a;
+  background-color: green;
   border-radius: 0 25px 25px;
-  color: #343a40;
+  color: white;
   font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
   font-weight: 700;
@@ -100,8 +100,9 @@
 }
 
 .conteiner-body-profeile button {
-  background-color: yellowgreen;
+  background-color: green;
   border-radius: 0 25px 25px;
+  color: white;
   font-family: ' Architects Daughter' , cursive;
   font-size: 25px;
   font-weight: 700;

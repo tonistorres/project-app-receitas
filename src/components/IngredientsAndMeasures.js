@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import './IngredientsAndMessaures.css';
 
 export default function IngredientsAndMeasures({ item }) {
   const [inProgress, setInprogress] = useState({
@@ -38,7 +39,8 @@ export default function IngredientsAndMeasures({ item }) {
   }, []);
 
   return (
-    <div>
+    <div className="container-main-ingredients">
+      <h1>Ingredients</h1>
       {inProgress.ingredients
         .map((i, ind) => (
           <p
