@@ -98,7 +98,6 @@ container-buttons-favorites {
   border-radius: 1px 125px 0;
   /* border: 5px solid blue; */
   background-color: #8baC5B;
-  
   display: flex;
   flex-direction: column;
   min-height: 370px;

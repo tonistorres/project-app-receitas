@@ -58,9 +58,11 @@
 .scroll-body-foods-in-progres {
     background-color: #c3ce6a;
     /* border: 5px solid whitesmoke; */
-    /* border-radius: 55px 5px 50px; */
+    border-radius: 5px 5px 90px;
+    margin-left: 25px;
     overflow-y: scroll;
     max-height: 230px;
+    max-width: 98%;
 }
 
 .scroll-body-foods-in-progres h3 {
