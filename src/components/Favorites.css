@@ -1,7 +1,7 @@
 /* ***********ESCOPO PRINCIPAL**************** */
 .container-main-favorites {
   align-items: center;
-  background-color: #009500;
+  background-color: #8BAC5B;
   border-radius: 1px 175px 0;
   display: flex;
   flex-direction: column;
@@ -26,14 +26,14 @@
 
 .cotainer-header-favorites img {
   background-color: white;
+  border: 5px;
   border-radius: 0 25px 25px;
   margin-left: 20px;
   padding: 5px 15px;
 }
 
 .cotainer-header-favorites img:hover {
-  animation: effectlight 2s;
-  background-color: yellowgreen;
+  background-color: #c3ce6a;
   border-radius: 0 25px 25px;
   margin-left: 20px;
   padding: 5px 15px;
@@ -41,7 +41,7 @@
 
 .cotainer-header-favorites h1 {
   align-items: center;
-  color: white;
+  color: #333;
   display: flex;
   font-family: ' Architects Daughter ' , cursive;
   font-size: 30px;
@@ -66,10 +66,10 @@ container-buttons-favorites {
 }
 
 .container-buttons-favorites button {
-  animation: rotating 1s;
+  animation: rotatingFavorites 10s;
   border-radius: 0 125px 25px;
   color: #343a40;
-  font-family: ' Architects Daughter', cursive;
+  font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
   font-weight: 700;
   height: 4vh;
@@ -79,10 +79,10 @@ container-buttons-favorites {
 }
 
 .container-buttons-favorites button:hover {
-  background-color: #009500;
+  background-color: #c3ce6a;
   border: 3px solid white;
   border-radius: 0 25px 25px;
-  color: white;
+  color: #333;
   font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
   font-weight: 700;
@@ -109,7 +109,7 @@ container-buttons-favorites {
 .container-conteudo-body-favorites {
   align-items: center;
   background-color: #c3ce6a;
-  border: 5px solid  yellowgreen;
+  border: 8px solid  #7cd27c;
   border-radius: 1px 175px 0;
   display: flex;
   flex-wrap: wrap;
@@ -131,7 +131,6 @@ container-buttons-favorites {
 
 .container-img-body-favorites:hover {
   align-items: center;
-  animation: rotating 1s;
   display: flex;
   flex-direction: row;
   height: 13vh;
@@ -140,35 +139,30 @@ container-buttons-favorites {
 }
 
 .img-main-favorites {
-  animation: effectlight 4s;
-  /* border: 8px solid #009500; */
-  /* border: 8px solid yellow; */
+  border: 5px solid #7cd27c;
   border-radius: 1px 125px 0;
   height: 110px;
   width: 180px;
 }
 
 .container-info-body-favorites {
-  display: flex;
-  background-color: green;
-  /* border: 5px solid red; */
+  background-color: #7cd27c;
   border-radius: 1px 125px 0;
+  display: flex;
   flex-direction: column;
   height: 16vh;
   width: 100%;
 }
 
 .container-info-body-horizontal-favorites {
-  display: flex;
-  /* border: 5px solid red; */
   border-radius: 1px 125px 0;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .container-info-body-horizontal-favorites #nationality {
   align-items: center;
-  /* border: 0.5px solid #343a40; */
   border-radius: 1px 25px 0;
   display: flex;
   flex-wrap: nowrap;
@@ -183,7 +177,7 @@ container-buttons-favorites {
 
 .container-info-body-horizontal-favorites #nationality:hover {
   align-items: center;
-  background-color: green;
+  background-color: #7cd27c;
   border: 3px solid white;
   border-radius: 1px 25px 0;
   color: white;
@@ -200,7 +194,6 @@ container-buttons-favorites {
 .container-info-body-horizontal-two-favorites {
   align-items: center;
   background-color: white;
-  /* border: 5px solid red; */
   border-radius: 1px 95px 0;
   color: #343a40;
   display: flex;
@@ -213,20 +206,33 @@ container-buttons-favorites {
 }
 
 .container-info-body-horizontal-two-favorites p {
-font-size: 25px;
-font-weight: 700;
-color: green;
+  color: #333;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 @keyframes rotatingFavorites {
 
-  from {
+  0% {
     transform: rotate(0deg);
   }
 
-  to {
-    transform: rotate(90deg);
+  25% {
+    transform: rotate(10deg);
   }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+
 }
 
 @keyframes effectlightFavorites {

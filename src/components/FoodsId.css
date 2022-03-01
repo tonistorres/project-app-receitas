@@ -1,6 +1,6 @@
 .container-main-foods-id {
-  background-color: #009500;
-  border: 8px solid #8bac5b;
+  background-color: #8BAC5B;
+  border: 8px solid #333;
   border-radius: 1px 115px 0;
   display: flex;
   flex-direction: column;
@@ -155,6 +155,22 @@
 
 #youtbe-video:hover {
   animation: amplia 2s forwards ease-in-out;
+}
+
+#btn-start-recipe {
+  align-items: center;
+  background-color: #c3ce6a;
+  border-radius: 1px 75px 10px;
+  display: flex;
+  font-size: 25px;
+  font-weight: 700;
+  min-height: 7vh;
+  justify-content: center;
+  width: 100%;
+}
+
+#btn-start-recipe:hover {
+  background-color: whitesmoke;  
 }
 
 @keyframes amplia {

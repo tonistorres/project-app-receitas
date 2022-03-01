@@ -1,0 +1,74 @@
+.container-main-body-foods-in-progres #label-category {
+  background-color: whitesmoke;
+  border-radius: 1px 115px 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 2px;
+  padding: 5px 5px;
+}
+
+.container-main-foods-in-progress {
+  background-color: #8bac5b;
+  border: 8px solid #333;
+  border-radius: 1px 115px 0;
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 320px;
+}
+
+.container-header-foods-in-progres {
+  align-items: center; 
+  border: 5px solid #7cd27c;
+  background-color: #c3ce6a;
+  border-radius: 1px 105px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-header-foods-in-progres img {
+    border: 5px solid #333;
+  border-radius: 1px 105px 0;
+  height: 135px;
+  width: 270px;
+}
+
+.container-header-foods-in-progres p {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.container-btn-header-foods-in-progres {
+    background-color: #c3ce6a;
+  /* border: 5px solid red; */
+  border-radius: 105px 5px 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.scroll-body-foods-in-progres {
+    background-color: #c3ce6a;
+    /* border: 5px solid whitesmoke; */
+    /* border-radius: 55px 5px 50px; */
+    overflow-y: scroll;
+    max-height: 230px;
+}
+
+.scroll-body-foods-in-progres h3 {
+    background-color: #8bac5b;
+    /* border: 5px solid whitesmoke; */
+    border-radius: 105px 5px 50px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    padding: 5px 5px;
+}

@@ -35,8 +35,8 @@
 
 
 .ico-bar-header:hover {
-  animation: effectBorder 1s;
-  background: white;
+  /* animation: effectBorder 1s; */
+  background: #c3ce6a;
   border-radius: 1px 15px 0;
   height: 40px;
   padding: 6px 6px;

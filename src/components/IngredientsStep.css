@@ -1,0 +1,17 @@
+.container-main-ingredient-step {
+    /* border: 5px solid red; */
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 3px;
+    justify-content: space-between;
+}
+
+#label-scratch {
+    /* border: 5px solid red; */
+    background-color: whitesmoke;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    justify-content: center;
+}

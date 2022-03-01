@@ -1,6 +1,6 @@
 .container-main-profile {
   align-items: center;
-  background-color: #009500;
+  background-color: #8BAC5B;
   display: flex;
   border-radius: 1px 175px 0;
   margin-left: 10px;
@@ -12,7 +12,7 @@
 
 .cotainer-header-profile {
   align-items: center;
-  background-color: #009500;
+  background-color: #8BAC5B;
   border-bottom: 10px solid white;
   border-radius: 20px;
   /* border-top: 10px solid #fd7e14; */
@@ -55,7 +55,7 @@
   background-color:white;
   /* border: 2px solid #333; */
   border-radius: 0 25px 25px;
-  color: green;
+  color: #333;
   display: flex;
   font-family: ' Architects Daughter' , cursive;
   font-size: 20px;
@@ -68,8 +68,8 @@
 
 
 .conteiner-body-profeile p:hover {
-  animation: rotating 2s;
-  background-color: green;
+  /* animation: rotating 2s; */
+  background-color:#8BAC5B;
   border-radius: 0 25px 25px;
   color: white;
   font-family: ' Architects Daughter' , cursive;
@@ -100,9 +100,9 @@
 }
 
 .conteiner-body-profeile button {
-  background-color: green;
+  background-color: #8BAC5B;
   border-radius: 0 25px 25px;
-  color: white;
+  color: #333;
   font-family: ' Architects Daughter' , cursive;
   font-size: 25px;
   font-weight: 700;
@@ -111,7 +111,7 @@
 }
 
 .conteiner-body-profeile button:hover {
-  animation: rotating 2s;
+  /* animation: rotating 2s; */
   background-color: #c3ce6a;
   border-radius: 0 25px 25px;
   color: #333;

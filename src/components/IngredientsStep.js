@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import IngredientsCheckDrinks from './IngredientsCheckDrinks';
 import IngredientsCheckFoods from './IngredientsCheckFoods';
+import './IngredientsStep.css';
 
 export default function IngredientsStep({ item, index }) {
   const [inProgress, setInprogress] = useState({
@@ -44,7 +45,8 @@ export default function IngredientsStep({ item, index }) {
   const { location: { pathname } } = history;
 
   return (
-    <div>
+    <div className="container-main-ingredient-step">
+      <h3 id="label-scratch">Scratch Ingredients</h3>
       {inProgress.ingredients
         .map((i, ind) => (
           <div key={ ind }>

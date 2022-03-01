@@ -56,7 +56,8 @@ function Login() {
 
   return (
     <div className="loginInput-main">
-      <h1> App de Receitas</h1>
+      <h1>Recipes</h1>
+      <h2>  Konoha</h2>
       <div className="efeitos-autenticacao-app">
         <div className="login-input-conteudo">
           <input

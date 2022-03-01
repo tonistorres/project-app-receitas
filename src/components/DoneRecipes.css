@@ -1,7 +1,7 @@
 /* ***********ESCOPO PRINCIPAL**************** */
 .container-main-done {
   align-items: center;
-  background-color: #009500;
+  background-color: #8BAC5B;
   border-radius: 1px 175px 0;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 /* ***********HEADER INICIO**************** */
 .cotainer-header-done {
   align-items: center;
-  background-color: #009500;
+  background-color: #8BAC5B;
   border-bottom: 10px solid white;
   border-radius: 1px 175px 0;
   display: flex;
@@ -30,8 +30,7 @@
 }
 
 .cotainer-header-done img:hover {
-  animation: effectlight 2s;
-  background-color: yellowgreen;
+  background-color: #c3ce6a;
   border-radius: 0 25px 25px;
   margin-left: 20px;
   padding: 5px 15px;
@@ -39,7 +38,7 @@
 
 .cotainer-header-done h1 {
   align-items: center;
-  color: white;
+  color: #333;
   display: flex;
   font-family: ' Architects Daughter ' , cursive;
   font-size: 25px;
@@ -63,7 +62,7 @@
 }
 
 .container-buttons-done button {
-  animation: rotating 1s;
+  animation: rotating 10s;
   border-radius: 0 125px 25px;
   color: #343a40;
   font-family: " Architects Daughter", cursive;
@@ -75,10 +74,10 @@
 }
 
 .container-buttons-done button:hover {
-  background-color: #009500;
+  background-color: #c3ce6a;
   border: 3px solid white;
   border-radius: 0 25px 25px;
-  color: white;
+  color: #333;
   font-family: ' Architects Daughter', cursive;
   font-size: 20px;
   font-weight: 700;
@@ -107,7 +106,7 @@
 
 .container-img-body {
   align-items: center;
-  background-color:white;
+  ackground-color:white;
   border: 1px solid #343a40;
   border-radius: 1px 125px 0;
   display: flex;
@@ -119,8 +118,7 @@
 
 /**** OLHO PARTE INTERNA ***/
 .container-img-body img {
-  animation: effectlight 4s;
-  border: 8px solid #009500;
+  border: 8px solid #343a40;
   border-radius: 1px 125px 0;
   height: 110px;
   width: 180px;
@@ -128,7 +126,7 @@
 
 .container-img-body:hover {
   align-items: center;
-  animation: rotating 1s;
+  animation: rotating 10s;
   display: flex;
   flex-direction: row;
   height: 13vh;
@@ -238,25 +236,18 @@
 }
 
 .container-info-body-horizontal-two button:hover {
-    animation: effectlight 2s;
-    background-color: white;
-    border-radius: 1px 15px 0;
-  }
-
+  background-color: white;
+  border-radius: 1px 15px 0;
+}
 
 
 /******* INICIO CORPO BARRA SCROLL******** */
-
 .container-body-important {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: nowrap; */
-  /* margin-top: 10px; */
   height: 370px;
   margin-right: 2px;
-  /* margin-bottom: 20px; */
-  /* overflow-x: scroll; */
   width: 320px;
 }
 
@@ -288,8 +279,6 @@
 
 /**** OLHO PARTE INTERNA ***/
 .img-main-favorites {
-  animation: effectlight 4s;
-  border: 8px solid #009500;
   border-radius: 1px 125px 0;
   height: 110px;
   width: 180px;
@@ -297,7 +286,7 @@
 
 .img-main-favorites:hover {
   align-items: center;
-  animation: rotating 1s;
+  animation: rotating 10s;
   display: flex;
   flex-direction: row;
   height: 13vh;

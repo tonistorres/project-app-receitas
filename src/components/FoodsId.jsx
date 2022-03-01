@@ -115,14 +115,19 @@ export default function FoodsId() {
               <button
                 data-testid="start-recipe-btn"
                 onClick={ () => history.push(`/foods/${id}/in-progress`) }
-                style={ { position: 'fixed', bottom: 0 } }
+                style={ { color: '#333' } }
                 type="button"
+                id="btn-start-recipe"
               >
+
                 {!init ? 'Start Recipe' : 'Continue Recipe' }
+
               </button>)}
+
           </div>
         </div>
       ))}
+
       <Footer />
     </div>
   );

@@ -18,10 +18,10 @@
 }
 
 .container-butons-category-btn button:hover {
-  animation: rotating 1s;
-  background-color: #009500;
+  animation: rotating 10s;
+  background-color: #7cd27c;
   border-radius: 0 25px 25px;
-  color: white;
+  color: #333;
   font-size: 16px;
   font-weight: 700;
   height: 4.5vh;
@@ -43,9 +43,9 @@
 
 .btn-all-category:hover {
   animation: rotating 1s;
-  background-color: #009500;
+  background-color: #7cd27c;
   border-radius: 0 25px 25px;
-  color: white;
+  color: #333;
   font-size: 16px;
   font-weight: 700;
   height: 4.5vh;

@@ -1,10 +1,11 @@
 .container-main-foods {
+  background-color: #8BAC5B;
   display: flex;
   flex-direction: column;
 }
 
 .container-buttons-food {
-  background:whitesmoke;
+  /* background-color: #8BAC5B; */
   /* border: 1px solid #343a40; */
   display: flex;
   flex-wrap: wrap;

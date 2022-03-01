@@ -9,20 +9,20 @@ function Loading() {
 
       <section className="container-img-loading">
         <div className="effect-css-moviment-2">
-          <span>A</span>
-          <span>p</span>
-          <span>p</span>
+          {/* <span>R</span>
+          <span></span>
+          <span>p</span> */}
         </div>
         <img className="img-loading" src={ img } alt="Loading" />
         <div className="effect-css-moviment-2">
-          <span>R</span>
-          <span>e</span>
-          <span>c</span>
-          <span>e</span>
-          <span>i</span>
-          <span>t</span>
+          <span>K</span>
+          <span>o</span>
+          <span>n</span>
+          <span>o</span>
+          <span>h</span>
           <span>a</span>
-          <span>s</span>
+          {/* <span>.</span>
+          <span>.</span> */}
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import './CheckFoods.css';
 
 export default function IngredientsCheckFoods({ ingredient, measure, index }) {
   const [stateClass, setStateClass] = useState('');
@@ -59,19 +60,22 @@ export default function IngredientsCheckFoods({ ingredient, measure, index }) {
   }, []);
 
   return (
-    <div>
+    <div className="container-main-check-foods">
       <label htmlFor="check" data-testid={ `data-testid=${index}-ingredient-step` }>
-        <span
-          style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }
-        >
-          {`${measure} - ${ingredient}`}
-        </span>
+
         <input
           type="checkbox"
           checked={ stateClass !== '' }
           id="check"
           onChange={ () => handleChange() }
         />
+        <span
+          style={ stateClass === '' ? {} : { textDecorationLine: 'line-through' } }
+        >
+          <span id="measure-check-foods">
+            {`${measure} - ${ingredient}`}
+          </span>
+        </span>
       </label>
     </div>);
 }

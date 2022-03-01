@@ -1,0 +1,20 @@
+.container-main-check-foods {
+    /* border: 5px solid blue; */
+    display: flex;
+    flex-direction: row;
+}
+
+#check {
+    border: 5px solid yellow;
+    margin-left: 15px;
+    padding-left: 115px;
+}
+
+#measure-check-foods {
+  /* border: 5px solid #333; */
+  /* background-color: #7cd27c; */
+  /* border-radius: 1px 175px 0; */
+  margin-left: 10px;
+  padding: 4px 4px 4px 4px;
+  width: 100%;
+}

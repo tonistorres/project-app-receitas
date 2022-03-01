@@ -33,7 +33,7 @@
 
 .btn-search-foods:hover {
   animation: rotating 1s;
-  background-color: #009500;
+  background-color: #7cd27c;
   color: white;
   font-size: 18px;
   font-weight: 700;
@@ -57,7 +57,7 @@
 
 .containers-radio-vertical:hover {
   align-items: center;
-  background: #009500;
+  background: #7cd27c;
   border: 0.5px solid #343a40;
   border-radius: 1px 15px 0;
   color: white;
