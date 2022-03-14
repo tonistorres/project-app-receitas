@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-// import './App.css';
 import DoneRecipes from './components/DoneRecipes';
 import DrinksId from './components/DrinksId';
 import DrinksInProgress from './components/DrinksInProgress';
@@ -18,7 +17,9 @@ import Login from './components/Login';
 import Provider from './context/Provider';
 import Drinks from './pages/Drinks';
 import Explore from './pages/Explore';
+// Importando Foods da Pasta pages
 import Foods from './pages/Foods';
+
 import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 

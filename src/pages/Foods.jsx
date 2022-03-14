@@ -10,6 +10,9 @@ import { ingredientsSearch, nameSearch } from '../services/fetch';
 import './Foods.css';
 import '../index.css';
 
+// aqui temos uma componente funcional onde utilizamos
+// o export default para deixá-lo publico  ou visível para
+// ser utilizado por outros componentes
 export default function Foods() {
   const { searchByFilter,
     foodCategory, setSearchByFilter } = useContext(context);
